@@ -1,7 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 
 dotenv.config();
+
+// Test ob env geladen wird
+console.log('MongoDB URI:', process.env.MONGODB_URI);
+
+connectDB();
 
 const app = express();
 
