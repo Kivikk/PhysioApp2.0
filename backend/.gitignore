@@ -1,0 +1,11 @@
+node_modules/
+.env
+
+# Optional npm cache directory
+.npm
+
+# Mac files
+.DS_Store
+
+# VS Code files
+.vscode/
