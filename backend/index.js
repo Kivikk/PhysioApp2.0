@@ -5,7 +5,7 @@ import connectDB from './config/db.js';
 dotenv.config();
 
 // Test ob env geladen wird
-console.log('MongoDB URI:', process.env.MONGODB_URI);
+// console.log('MongoDB URI:', process.env.MONGODB_URI);
 
 connectDB();
 
