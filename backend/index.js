@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import cardRoutes from './routes/cardRoutes.js';
 
 dotenv.config();
 
@@ -11,8 +12,13 @@ connectDB();
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 
+// Routes registrieren
+app.use('/api/cards', cardRoutes);
+
+// Test Route
 app.get('/test', (req, res) => {
   res.json({ message: 'Server is running!' });
 });

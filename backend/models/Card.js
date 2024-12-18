@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const EXERCISE_CATEGROIES = [
+const EXERCISE_CATEGORIES = [
   'Hip',
   'Legs',
-  'Back',
   'Shoulders',
+  'Back',
+  'Arms',
   'Core'
 ];
 
@@ -18,26 +19,26 @@ const cardSchema = new Schema({
   category: {
     type: String,
     required: true,
-    enum: EXERCISE_CATEGROIES,
+    enum: EXERCISE_CATEGORIES,
     trim: true
   },
-  startingPosition: {
+  startingPosition: [{
     type: String,
     required: true,
-    validate: [(val) => val.length > 0]
-  },
-  execution: {
+    trim: true
+  }],
+  execution: [{
     type: String,
     required: true,
-    validate: [(val) => val.length > 0]
-  },
-  endPosition: {
+    trim: true
+  }],
+  endPosition: [{
     type: String,
     required: true,
-    validate: [(val) => val.length > 0]
-  },
+    trim: true
+  }],
   repetitions: {
-    type: Number,
+    type: String,
     required: true,
     trim: true
   },
@@ -49,10 +50,9 @@ const cardSchema = new Schema({
     type: String,
     required: true
   }
-},
-  {
-    timestamps: true
-  });
+}, {
+  timestamps: true
+});
 
-export { EXERCISE_CATEGROIES };
+export { EXERCISE_CATEGORIES };
 export default mongoose.model('Card', cardSchema);
