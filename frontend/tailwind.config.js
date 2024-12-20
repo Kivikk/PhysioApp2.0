@@ -15,7 +15,14 @@ export default {
           mocha: '#A47765',    // MochaMouse
           chanterelle: '#A28777', // Chanterelle
           amber: '#8B6454',    // Baltic Amber
-          chocolate: '#56453F'  // ChocolateMartini
+          chocolate: '#56453F',// ChocolateMartini
+          terrakotta: '#E8916C',// Terrakotta
+          kupfer: '#CB7D5D',   // Copper
+          sage: '#8B9B7E',       // Sage
+          olive: '#7A8B76',         // Olive
+          bluegray: '#7B8F9C',     // BlueGrey
+          Petrol: '#6E8288',       // Petrol
+
         }
       }
     },
