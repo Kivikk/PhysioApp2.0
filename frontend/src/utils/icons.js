@@ -1,53 +1,55 @@
 // Navigation & User Icons
 import {
-  LuX,
-  LuUser,
-  LuLogIn,
-  LuLogOut
-} from "react-icons/lu";
+  X,
+  User,
+  LogIn,
+  LogOut
+} from "lucide-react";
 
 // Exercise Cards & Categories Icons
 import {
-  LuFilter,
-  LuClipboardList,
-  LuChevronLeft,
-  LuChevronRight,
-  LuBookOpen,
-  LuPlus,
-  LuPencil,
-  LuSave,
-  LuTrash2
-} from "react-icons/lu";
+  Filter,
+  ClipboardList,
+  ChevronLeft,
+  ChevronRight,
+  BookOpen,
+  Plus,
+  Pencil,
+  Save,
+  Trash2,
+  Heart
+} from "lucide-react";
 
 // Journal & Tracking Icons
 import {
-  LuCalendarRange,
-  LuTrendingUp,
-  LuCircleCheck,
-  LuClock
-} from "react-icons/lu";
+  CalendarRange,
+  TrendingUp,
+  CheckCircle,  // Beachte: CircleCheck wurde zu CheckCircle
+  Clock
+} from "lucide-react";
 
 export {
   // Navigation & User
-  LuX,
-  LuUser,
-  LuLogIn,
-  LuLogOut,
+  X,
+  User,
+  LogIn,
+  LogOut,
 
   // Exercise Cards & Categories
-  LuFilter,
-  LuClipboardList,
-  LuChevronLeft,
-  LuChevronRight,
-  LuBookOpen,
-  LuPlus,
-  LuPencil,
-  LuSave,
-  LuTrash2,
+  Filter,
+  ClipboardList,
+  ChevronLeft,
+  ChevronRight,
+  BookOpen,
+  Plus,
+  Pencil,
+  Save,
+  Trash2,
+  Heart,
 
   // Journal & Tracking
-  LuCalendarRange,
-  LuTrendingUp,
-  LuCircleCheck,
-  LuClock
+  CalendarRange,
+  TrendingUp,
+  CheckCircle,
+  Clock
 };
