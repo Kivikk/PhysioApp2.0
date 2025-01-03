@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Heart, Clock } from '../../utils/icons';
+import { Heart, Clock } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
-
+import { useFavorites } from '../../hooks/useFavorites';
 
 const WorkoutCard = ({
+  id,
   image = 'PlaceholderPhysioApp.svg',
   title = "Placeholder Title",
   showDetails = true,
@@ -13,23 +14,24 @@ const WorkoutCard = ({
   endPosition = [],
   repetitions = "N/A",
   note = "N/A",
-  isFavorite: initialFavorite = false,
   isWorkoutPlan = false,
   category = [],
-  onFavoriteChange = () => { },
+  onFavoriteChange
 }) => {
-  const [isFavorite, setIsFavorite] = useState(initialFavorite);
+  const [isHovered, setIsHovered] = useState(false);
+  const { isFavorite } = useFavorites();
+  const isInFavorites = isFavorite(id);
 
   const handleFavoriteClick = (e) => {
     e.preventDefault();
-    const newFavoriteState = !isFavorite;
-    setIsFavorite(newFavoriteState);
-    onFavoriteChange(newFavoriteState);
+    if (isInFavorites && onFavoriteChange) {
+      onFavoriteChange(false);
+    }
   };
 
   const backgroundColorClass = category.length > 0
     ? categoryColorMap[category[0]]
-    : defaultCategoryColor; // Fallback Farbe
+    : defaultCategoryColor;
 
   return (
     <div className="bg-physio-cream rounded shadow-md overflow-hidden relative w-full max-w-md mx-auto">
@@ -44,23 +46,19 @@ const WorkoutCard = ({
             </span>
           ))}
         </div>
-        <div className="absolute top-2 right-2 flex gap-2 z-10">
+        {isInFavorites && (
           <button
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             onClick={handleFavoriteClick}
-            className="transition-transform duration-200 hover:scale-110 focus:outline-none"
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            className="absolute top-2 right-2 z-10 p-2 transition-transform duration-200 hover:scale-110"
           >
             <Heart
-              className={`h-6 w-6 ${isFavorite
-                ? "text-physio-terrakotta fill-current"
-                : "text-physio-terrakotta hover:fill-current"
+              className={`w-6 h-6 text-physio-terrakotta ${isHovered ? '' : 'fill-current'
                 }`}
             />
           </button>
-          {isWorkoutPlan && (
-            <Clock className="h-6 w-6 text-physio-sage" />
-          )}
-        </div>
+        )}
 
         <div className="w-full h-64">
           <img
@@ -75,8 +73,6 @@ const WorkoutCard = ({
         <h3 className="text-lg font-semibold text-physio-chocolate text-left">
           {title}
         </h3>
-
-
 
         {showDetails && (
           <div className="mt-4 space-y-4">

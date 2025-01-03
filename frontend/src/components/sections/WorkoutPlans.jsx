@@ -4,26 +4,29 @@ import ExerciseModal from '../modals/ExerciseModal';
 
 const workoutPlans = [
   {
+    id: "plan1",
     title: "Rückenübungen",
     exercises: [
-      { image: "RueckenRolle.svg", category: ["Back"] },
-      { image: "DehnungKindhaltung.svg", category: ["Back"] },
-      { image: "Vorbeuger.svg", category: ["Back"] }
+      { id: "back3", image: "RueckenRolle.svg", category: ["Back"] },
+      { id: "back1", image: "DehnungKindhaltung.svg", category: ["Back"] },
+      { id: "back4", image: "Vorbeuger.svg", category: ["Back"] }
     ]
   },
   {
+    id: "plan2",
     title: "Schulter & Nacken",
     exercises: [
-      { image: "BandSchulter.svg", category: ["Shoulders"] },
-      { image: "NackenRolle.svg", category: ["Back"] }
+      { id: "shoulders1", image: "BandSchulter.svg", category: ["Shoulders"] },
+      { id: "back2", image: "NackenRolle.svg", category: ["Back"] }
     ]
   },
   {
+    id: "plan3",
     title: "Unterkörper",
     exercises: [
-      { image: "Beinheben.svg", category: ["Legs"] },
-      { image: "HueftHebung.svg", category: ["Hip"] },
-      { image: "WadenHueftDehnung.svg", category: ["Legs", "Hip"] }
+      { id: "legs1", image: "Beinheben.svg", category: ["Legs"] },
+      { id: "hip1", image: "HueftHebung.svg", category: ["Hip"] },
+      { id: "legs-hip1", image: "WadenHueftDehnung.svg", category: ["Legs", "Hip"] }
     ]
   }
 ];
@@ -48,15 +51,15 @@ const WorkoutPlans = () => {
         Vorgefertigte Übungspläne
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {workoutPlans.map((plan, idx) => (
-          <div key={idx} className="bg-white rounded-lg shadow-md p-4">
+        {workoutPlans.map((plan) => (
+          <div key={plan.id} className="bg-physio-cream rounded-lg shadow-md p-4">
             <h3 className="text-xl font-medium text-physio-chocolate mb-4">
               {plan.title}
             </h3>
             <div className="grid grid-cols-2 gap-2">
-              {plan.exercises.map((exercise, index) => (
+              {plan.exercises.map((exercise) => (
                 <CompactWorkoutCard
-                  key={index}
+                  key={exercise.id}
                   {...exercise}
                   onClick={() => handleCardClick(exercise)}
                 />

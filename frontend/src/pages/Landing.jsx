@@ -9,7 +9,7 @@ const Landing = () => {
       {/* Header Section */}
       <div className="container mx-auto px-4 mb-12">
         <h1 className="text-3xl font-bold text-physio-chocolate text-center py-8">
-          Willkommen bei PhysioApp
+
         </h1>
       </div>
 
