@@ -1,25 +1,22 @@
-// src/components/layout/Header.jsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { User, Heart } from "../../utils/icons";
+import { User, Heart, LogIn } from "../../utils/icons";
 import { useFavorites } from "../../hooks/useFavorites";
+import MobileNav from "../navigation/MobileNav";
 import logo from "../../assets/logo.svg";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { favorites, getFavoriteCount } = useFavorites();
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const currentCount = Object.keys(favorites).length;
-    setCount(currentCount);
-  }, [favorites]);
+  const { getFavoriteCount } = useFavorites();
 
   return (
     <header className="bg-physio-safari/75 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={() => navigate('/')}
+          >
             <img
               src={logo}
               alt="PhysioApp Logo"
@@ -30,26 +27,38 @@ const Header = () => {
             </h1>
           </div>
 
-          <div className="flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-6">
             <button
               onClick={() => navigate('/favorites')}
               className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative"
               aria-label="Favoriten"
             >
               <Heart className="h-5 w-5 text-physio-cream" />
-              {count > 0 && (
-                <span className="absolute -top-2 -right-2 bg-physio-terrakotta text-white 
-                              text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  {count}
+              {getFavoriteCount() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-physio-terrakotta text-white
+                                text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {getFavoriteCount()}
                 </span>
               )}
             </button>
 
-            <button className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 flex items-center gap-2">
-              <User className="h-5 w-5 text-physio-cream" />
+            <button
+              onClick={() => navigate('/login')}
+              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 flex items-center gap-2"
+            >
+              <LogIn className="h-5 w-5 text-physio-cream" />
               <span>Login</span>
             </button>
+
+            <button className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 flex items-center gap-2">
+              <User className="h-5 w-5 text-physio-cream" />
+              <span>Profil</span>
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
         </div>
       </div>
     </header>

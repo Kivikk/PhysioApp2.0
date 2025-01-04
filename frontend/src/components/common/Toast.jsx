@@ -1,7 +1,6 @@
-import React from 'react';
-import { AlertCircle, CheckCircle, X } from 'lucide-react';
+import { AlertCircle, CheckCircle, Info, AlertTriangle, X } from '../../utils/icons';
 
-const Toast = ({ message, type = 'error', onClose }) => {
+const Toast = ({ message, type = 'success', onClose }) => {
   const types = {
     error: {
       backgroundColor: 'bg-physio-terrakotta',
@@ -10,22 +9,39 @@ const Toast = ({ message, type = 'error', onClose }) => {
     success: {
       backgroundColor: 'bg-physio-sage',
       icon: <CheckCircle className="w-5 h-5" />
+    },
+    warning: {
+      backgroundColor: 'bg-physio-kupfer',
+      icon: <AlertTriangle className="w-5 h-5" />
+    },
+    info: {
+      backgroundColor: 'bg-physio-bluegray',
+      icon: <Info className="w-5 h-5" />
     }
   };
 
-  const { backgroundColor, icon } = types[type] || types.error;
+  const { backgroundColor, icon } = types[type] || types.success;
 
   return (
-    <div className={`fixed top-4 right-4 z-50 flex items-center ${backgroundColor} text-white px-4 py-3 rounded-lg shadow-lg`}>
+    <div
+      className={`
+        flex items-center 
+        ${backgroundColor} 
+        text-white px-4 py-3 rounded-lg shadow-lg
+        min-w-[300px] max-w-[400px]
+        animate-fade-in
+      `}
+    >
       <div className="mr-2">
         {icon}
       </div>
-      <p className="mr-4">{message}</p>
+      <p className="mr-4 flex-grow">{message}</p>
       <button
         onClick={onClose}
-        className="ml-auto hover:opacity-80 transition-opacity"
+        className="ml-auto p-1 hover:bg-white/20 rounded-full transition-colors"
+        aria-label="Close notification"
       >
-        <X className="w-5 h-5" />
+        <X className="w-4 h-4" />
       </button>
     </div>
   );

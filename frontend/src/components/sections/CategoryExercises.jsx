@@ -1,4 +1,3 @@
-// src/components/sections/CategoryExercises.jsx
 import React, { useState } from 'react';
 import CompactWorkoutCard from '../cards/CompactWorkoutCard';
 import ExerciseModal from '../modals/ExerciseModal';

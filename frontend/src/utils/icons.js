@@ -3,7 +3,8 @@ import {
   X,
   User,
   LogIn,
-  LogOut
+  LogOut,
+  Menu
 } from "lucide-react";
 
 // Exercise Cards & Categories Icons
@@ -24,8 +25,15 @@ import {
 import {
   CalendarRange,
   TrendingUp,
-  CheckCircle,  // Beachte: CircleCheck wurde zu CheckCircle
+  CheckCircle,
   Clock
+} from "lucide-react";
+
+// Notification & Alert Icons
+import {
+  AlertCircle,
+  AlertTriangle,
+  Info
 } from "lucide-react";
 
 export {
@@ -34,6 +42,7 @@ export {
   User,
   LogIn,
   LogOut,
+  Menu,
 
   // Exercise Cards & Categories
   Filter,
@@ -51,5 +60,10 @@ export {
   CalendarRange,
   TrendingUp,
   CheckCircle,
-  Clock
+  Clock,
+
+  // Notification & Alert
+  AlertCircle,
+  AlertTriangle,
+  Info
 };

@@ -70,6 +70,16 @@ const ExerciseModal = ({
               className="w-full h-full object-contain scale-150"
             />
           </div>
+          <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">
+            {category.map((cat, index) => (
+              <span
+                key={index}
+                className="text-sm px-2 py-1 rounded bg-physio-cream/40 text-physio-chocolate"
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="p-6">

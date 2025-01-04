@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Clock } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
@@ -21,12 +22,17 @@ const WorkoutCard = ({
   const [isHovered, setIsHovered] = useState(false);
   const { isFavorite } = useFavorites();
   const isInFavorites = isFavorite(id);
+  const navigate = useNavigate();
 
   const handleFavoriteClick = (e) => {
-    e.preventDefault();
+    e.stopPropagation(); // Verhindert Navigation zur Detailansicht
     if (isInFavorites && onFavoriteChange) {
       onFavoriteChange(false);
     }
+  };
+
+  const handleCardClick = () => {
+    navigate(`/exercise/${id}`);
   };
 
   const backgroundColorClass = category.length > 0
@@ -34,7 +40,10 @@ const WorkoutCard = ({
     : defaultCategoryColor;
 
   return (
-    <div className="bg-physio-cream rounded shadow-md overflow-hidden relative w-full max-w-md mx-auto">
+    <div
+      onClick={handleCardClick}
+      className="bg-physio-cream rounded shadow-md overflow-hidden relative w-full max-w-md mx-auto cursor-pointer hover:shadow-lg transition-shadow duration-200"
+    >
       <div className={`relative ${backgroundColorClass}`}>
         <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">
           {category.map((cat, index) => (
@@ -46,6 +55,7 @@ const WorkoutCard = ({
             </span>
           ))}
         </div>
+
         {isInFavorites && (
           <button
             onMouseEnter={() => setIsHovered(true)}
@@ -54,8 +64,7 @@ const WorkoutCard = ({
             className="absolute top-2 right-2 z-10 p-2 transition-transform duration-200 hover:scale-110"
           >
             <Heart
-              className={`w-6 h-6 text-physio-terrakotta ${isHovered ? '' : 'fill-current'
-                }`}
+              className={`w-6 h-6 text-physio-terrakotta ${isHovered ? '' : 'fill-current'}`}
             />
           </button>
         )}
@@ -88,6 +97,7 @@ const WorkoutCard = ({
                 </ul>
               </div>
             )}
+
             {execution.length > 0 && (
               <div>
                 <h4 className="font-medium text-physio-mocha text-left uppercase">
@@ -100,6 +110,7 @@ const WorkoutCard = ({
                 </ul>
               </div>
             )}
+
             {endPosition.length > 0 && (
               <div>
                 <h4 className="font-medium text-physio-mocha text-left uppercase">
@@ -112,6 +123,7 @@ const WorkoutCard = ({
                 </ul>
               </div>
             )}
+
             <div className="mt-4">
               <div>
                 <h4 className="font-medium text-physio-mocha text-left uppercase">
@@ -119,6 +131,7 @@ const WorkoutCard = ({
                 </h4>
                 <p className="text-physio-amber text-left pl-4">{repetitions}</p>
               </div>
+
               {note !== "N/A" && (
                 <div>
                   <h4 className="font-medium text-physio-mocha text-left uppercase">

@@ -1,40 +1,56 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
-import { X } from 'lucide-react';
+import Toast from '../components/common/Toast';
 
 const ToastContext = createContext(null);
 
+const TOAST_DURATION = {
+  short: 2000,
+  normal: 3000,
+  long: 5000
+};
+
 export const ToastProvider = ({ children }) => {
-  const [toast, setToast] = useState(null);
+  const [toasts, setToasts] = useState([]);
 
-  const hideToast = useCallback(() => {
-    setToast(null);
+  const hideToast = useCallback((id) => {
+    setToasts(currentToasts =>
+      currentToasts.filter(toast => toast.id !== id)
+    );
   }, []);
 
-  const showToast = useCallback((message, type = 'success') => {
-    setToast({ message, type });
-  }, []);
+  const showToast = useCallback((message, config = {}) => {
+    const {
+      type = 'success',
+      duration = TOAST_DURATION.normal,
+    } = config;
+
+    const id = Date.now();
+
+    setToasts(currentToasts => [...currentToasts, {
+      id,
+      message,
+      type,
+      duration,
+    }]);
+
+    setTimeout(() => {
+      hideToast(id);
+    }, duration);
+  }, [hideToast]);
 
   return (
     <ToastContext.Provider value={{ showToast, hideToast }}>
       {children}
-      {toast && (
-        <div className={`
-          fixed top-4 right-4 z-50 
-          ${toast.type === 'error' ? 'bg-physio-terrakotta' : 'bg-physio-sage'}
-          text-white px-4 py-3 rounded-lg shadow-lg
-          flex items-center justify-between
-          min-w-[300px]
-          animate-fade-in
-        `}>
-          <p className="pr-4">{toast.message}</p>
-          <button
-            onClick={hideToast}
-            className="p-1 hover:bg-white/20 rounded-full transition-colors"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-      )}
+      <div className="fixed top-4 right-4 z-50 flex flex-col gap-2">
+        {toasts.map(toast => (
+          <Toast
+            key={toast.id}
+            message={toast.message}
+            type={toast.type}
+            onClose={() => hideToast(toast.id)}
+          />
+        ))}
+      </div>
     </ToastContext.Provider>
   );
 };
@@ -46,3 +62,5 @@ export const useToast = () => {
   }
   return context;
 };
+
+export { TOAST_DURATION };
