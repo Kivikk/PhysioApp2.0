@@ -33,3 +33,7 @@ export const images = {
   'WadenHueftDehnung.svg': WadenHueftDehnung,
   'PlaceholderPhysioApp.svg': PlaceholderPhysioApp
 };
+
+export const getExerciseImage = (imageName) => {
+  return images[imageName] || images['PlaceholderPhysioApp.svg'];
+};

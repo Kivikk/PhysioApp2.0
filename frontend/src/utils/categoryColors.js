@@ -1,7 +1,7 @@
 export const categoryColorMap = {
   Legs: 'bg-physio-bluegray/60',
   Hip: 'bg-physio-sage/60',
-  Shoulders: 'bg-physio-terrakotta/60',
+  Shoulder: 'bg-physio-terrakotta/60',
   Back: 'bg-physio-chanterelle/60',
   Arms: 'bg-physio-sirocco/60',
   Core: 'bg-physio-kupfer/60'

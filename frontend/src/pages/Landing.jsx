@@ -6,16 +6,16 @@ import WorkoutPlans from "../components/sections/WorkoutPlans";
 const Landing = () => {
   console.log('Landing Page rendering');
   return (
-    <div className="min-h-screen bg-red-100">
+    <div className="min-h-screen bg-physio-cream">
       {/* Header Section */}
-      <div className="container mx-auto px-4 mb-12">
+      <div className="container mx-auto px-4 mb-0">
         <h1 className="text-3xl font-bold text-physio-chocolate text-center py-8">
-
+          {/* Überschrift optional */}
         </h1>
       </div>
 
       {/* Übungen Übersicht */}
-      <div className="container mx-auto px-4 mb-12 bg-blue-100">
+      <div className="container mx-auto px-4 mb-12">
         <AllExercises />
       </div>
 

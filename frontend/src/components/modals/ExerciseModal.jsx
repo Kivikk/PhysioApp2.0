@@ -1,4 +1,3 @@
-// src/components/modals/ExerciseModal.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart } from 'lucide-react';
@@ -30,7 +29,7 @@ const ExerciseModal = ({
         title,
         category
       });
-      onClose(); // Schließe das Modal vor der Navigation
+      onClose();
     } catch (error) {
       console.error('Error adding to favorites:', error);
     }
