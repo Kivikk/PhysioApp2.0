@@ -17,10 +17,14 @@ const cardSchema = new Schema({
     trim: true
   },
   category: {
-    type: String,
+    type: [String],
     required: true,
-    enum: EXERCISE_CATEGORIES,
-    trim: true
+    validate: {
+      validator: function (categories) {
+        return categories && categories.length > 0;
+      },
+      message: 'Mindestens eine Kategorie muss angegeben werden'
+    }
   },
   startingPosition: [{
     type: String,
@@ -52,6 +56,16 @@ const cardSchema = new Schema({
   }
 }, {
   timestamps: true
+});
+
+cardSchema.index({ category: 1 });
+
+cardSchema.pre('save', function (next) {
+  if (this.isModified('category')) {
+    // Entfernt Leerzeichen und Dup
+    this.category = [...new Set(this.category.map(cat => cat.trim()))];
+  }
+  next();
 });
 
 export { EXERCISE_CATEGORIES };
