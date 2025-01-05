@@ -1,8 +1,10 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from './Header';
 
 
 const MainLayout = ({ children }) => {
+  console.log('MainLayout rendering');  // Debug log
   return (
     <div className='min-h-screen bg-physio-cream/40 flex flex-col'>
       <Header />
@@ -10,7 +12,7 @@ const MainLayout = ({ children }) => {
       {/*Main Content*/}
       <main className='flex-grow'>
 
-        {children}
+        <Outlet />
 
       </main>
 

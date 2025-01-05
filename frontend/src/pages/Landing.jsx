@@ -4,8 +4,9 @@ import CategoryExercises from "../components/sections/CategoryExercises";
 import WorkoutPlans from "../components/sections/WorkoutPlans";
 
 const Landing = () => {
+  console.log('Landing Page rendering');
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-red-100">
       {/* Header Section */}
       <div className="container mx-auto px-4 mb-12">
         <h1 className="text-3xl font-bold text-physio-chocolate text-center py-8">
@@ -14,7 +15,7 @@ const Landing = () => {
       </div>
 
       {/* Übungen Übersicht */}
-      <div className="container mx-auto px-4 mb-12">
+      <div className="container mx-auto px-4 mb-12 bg-blue-100">
         <AllExercises />
       </div>
 

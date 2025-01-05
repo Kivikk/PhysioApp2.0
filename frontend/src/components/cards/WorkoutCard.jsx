@@ -1,148 +1,91 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Heart, Clock } from 'lucide-react';
-import { images } from '../../utils/imageImports';
-import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
+import { Link } from 'react-router-dom';
+import { Heart } from 'lucide-react';
 import { useFavorites } from '../../hooks/useFavorites';
 
-const WorkoutCard = ({
-  id,
-  image = 'PlaceholderPhysioApp.svg',
-  title = "Placeholder Title",
-  showDetails = true,
-  startingPosition = [],
-  execution = [],
-  endPosition = [],
-  repetitions = "N/A",
-  note = "N/A",
-  isWorkoutPlan = false,
-  category = [],
-  onFavoriteChange
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const { isFavorite } = useFavorites();
-  const isInFavorites = isFavorite(id);
-  const navigate = useNavigate();
+const WorkoutCard = ({ exercise }) => {
+  const { isFavorite, toggleFavorite } = useFavorites();
 
-  const handleFavoriteClick = (e) => {
-    e.stopPropagation(); // Verhindert Navigation zur Detailansicht
-    if (isInFavorites && onFavoriteChange) {
-      onFavoriteChange(false);
-    }
+
+  const {
+    _id,
+    title,
+    category,
+    startingPosition,
+    execution,
+    endPosition,
+    repetitions,
+    note,
+    image
+  } = exercise;
+
+
+  const getCategoryColor = (categoryName) => {
+    const colors = {
+      'Arms': 'bg-physio-terrakotta',
+      'Legs': 'bg-physio-sage',
+      'Hip': 'bg-physio-bluegray',
+      'Shoulders': 'bg-physio-Petrol',
+      'Back': 'bg-physio-mocha',
+      'Core': 'bg-physio-olive'
+    };
+    return colors[categoryName] || 'bg-physio-cream';
   };
-
-  const handleCardClick = () => {
-    navigate(`/exercise/${id}`);
-  };
-
-  const backgroundColorClass = category.length > 0
-    ? categoryColorMap[category[0]]
-    : defaultCategoryColor;
 
   return (
-    <div
-      onClick={handleCardClick}
-      className="bg-physio-cream rounded shadow-md overflow-hidden relative w-full max-w-md mx-auto cursor-pointer hover:shadow-lg transition-shadow duration-200"
-    >
-      <div className={`relative ${backgroundColorClass}`}>
-        <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+        <button
+          onClick={() => toggleFavorite(_id)}
+          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+        >
+          <Heart
+            size={20}
+            className={isFavorite(_id) ? 'fill-red-500 text-red-500' : 'text-gray-600'}
+          />
+        </button>
+      </div>
+
+
+      <div className="p-4">
+
+        <div className="flex flex-wrap gap-2 mb-2">
           {category.map((cat, index) => (
             <span
               key={index}
-              className="text-sm px-2 py-1 rounded bg-physio-cream/40 text-physio-chocolate"
+              className={`inline-block px-3 py-1 rounded-full text-sm text-white ${getCategoryColor(cat)}`}
             >
               {cat}
             </span>
           ))}
         </div>
 
-        {isInFavorites && (
-          <button
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={handleFavoriteClick}
-            className="absolute top-2 right-2 z-10 p-2 transition-transform duration-200 hover:scale-110"
-          >
-            <Heart
-              className={`w-6 h-6 text-physio-terrakotta ${isHovered ? '' : 'fill-current'}`}
-            />
-          </button>
-        )}
+        {/* Titel */}
+        <h3 className="text-xl font-bold mb-2 text-physio-chocolate">{title}</h3>
 
-        <div className="w-full h-64">
-          <img
-            src={images[image]}
-            alt={title}
-            className="w-full h-full object-contain scale-150"
-          />
+
+        <div className="mb-4">
+          <p className="text-sm text-gray-600">
+            {startingPosition[0]}
+            {startingPosition.length > 1 && '...'}
+          </p>
         </div>
-      </div>
 
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-physio-chocolate text-left">
-          {title}
-        </h3>
 
-        {showDetails && (
-          <div className="mt-4 space-y-4">
-            {startingPosition.length > 0 && (
-              <div>
-                <h4 className="font-medium text-physio-mocha text-left uppercase">
-                  Starting Position
-                </h4>
-                <ul className="pl-4 text-physio-amber text-left list-none">
-                  {startingPosition.map((step, index) => (
-                    <li key={index}>{step}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+        <p className="text-sm text-physio-mocha mb-4">{repetitions}</p>
 
-            {execution.length > 0 && (
-              <div>
-                <h4 className="font-medium text-physio-mocha text-left uppercase">
-                  Execution
-                </h4>
-                <ul className="pl-4 text-physio-amber text-left list-none">
-                  {execution.map((step, index) => (
-                    <li key={index}>{step}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
-            {endPosition.length > 0 && (
-              <div>
-                <h4 className="font-medium text-physio-mocha text-left uppercase">
-                  End Position
-                </h4>
-                <ul className="pl-4 text-physio-amber text-left list-none">
-                  {endPosition.map((step, index) => (
-                    <li key={index}>{step}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="mt-4">
-              <div>
-                <h4 className="font-medium text-physio-mocha text-left uppercase">
-                  Repetitions
-                </h4>
-                <p className="text-physio-amber text-left pl-4">{repetitions}</p>
-              </div>
-
-              {note !== "N/A" && (
-                <div>
-                  <h4 className="font-medium text-physio-mocha text-left uppercase">
-                    Note
-                  </h4>
-                  <p className="text-physio-amber text-left pl-4">{note}</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
+        <Link
+          to={`/exercise/${_id}`}
+          className="inline-block px-4 py-2 bg-physio-cream text-physio-chocolate rounded-md hover:bg-physio-tan transition-colors duration-200"
+        >
+          Details anzeigen
+        </Link>
       </div>
     </div>
   );
