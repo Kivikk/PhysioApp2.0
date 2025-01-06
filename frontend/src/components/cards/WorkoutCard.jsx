@@ -1,15 +1,17 @@
-// src/components/cards/WorkoutCard.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { images } from '../../utils/imageImports';
-import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
 import { useFavorites } from '../../hooks/useFavorites';
 
-const WorkoutCard = ({ exercise }) => {
+const WorkoutCard = ({ exercise, showDetails = false }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const navigate = useNavigate();
-  const [isHovered, setIsHovered] = useState(false);
+
+  if (!exercise || !exercise._id) {
+    console.error('Invalid exercise data provided');
+    return null;
+  }
 
   const {
     _id,
@@ -23,16 +25,20 @@ const WorkoutCard = ({ exercise }) => {
     image
   } = exercise;
 
-  const handleFavoriteClick = (e) => {
+  const handleFavoriteClick = async (e) => {
     e.stopPropagation();
-    toggleFavorite(_id);
+    try {
+      await toggleFavorite(_id);
+    } catch (error) {
+      console.error('Error toggling favorite:', error);
+    }
   };
 
   const handleCardClick = () => {
     navigate(`/exercise/${_id}`);
   };
 
-  const getCategoryColor = (categoryName) => {
+  const getCategoryColor = (cat) => {
     const colors = {
       'Arms': 'bg-physio-terrakotta',
       'Legs': 'bg-physio-sage',
@@ -41,7 +47,7 @@ const WorkoutCard = ({ exercise }) => {
       'Back': 'bg-physio-mocha',
       'Core': 'bg-physio-olive'
     };
-    return colors[categoryName] || 'bg-physio-cream';
+    return colors[cat] || 'bg-physio-cream';
   };
 
   return (
@@ -54,11 +60,12 @@ const WorkoutCard = ({ exercise }) => {
           src={images[image] || images['PlaceholderPhysioApp.svg']}
           alt={title}
           className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = images['PlaceholderPhysioApp.svg'];
+          }}
         />
         <button
           onClick={handleFavoriteClick}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
         >
           <Heart
@@ -70,9 +77,9 @@ const WorkoutCard = ({ exercise }) => {
 
       <div className="p-4">
         <div className="flex flex-wrap gap-2 mb-2">
-          {category.map((cat, index) => (
+          {Array.isArray(category) && category.map((cat, index) => (
             <span
-              key={index}
+              key={`${_id}-${cat}-${index}`}
               className={`inline-block px-3 py-1 rounded-full text-sm text-white ${getCategoryColor(cat)}`}
             >
               {cat}
@@ -82,14 +89,68 @@ const WorkoutCard = ({ exercise }) => {
 
         <h3 className="text-xl font-bold mb-2 text-physio-chocolate">{title}</h3>
 
-        <div className="mb-4">
-          <p className="text-sm text-gray-600">
-            {startingPosition[0]}
-            {startingPosition.length > 1 && '...'}
-          </p>
-        </div>
+        {showDetails && (
+          <div className="mt-4 space-y-4">
+            {startingPosition?.length > 0 && (
+              <div>
+                <h4 className="font-medium text-physio-mocha text-left uppercase">
+                  Starting Position
+                </h4>
+                <ul className="pl-4 text-physio-amber text-left list-none">
+                  {startingPosition.map((step, index) => (
+                    <li key={`${_id}-start-${index}`}>{step}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-        <p className="text-sm text-physio-mocha mb-4">{repetitions}</p>
+            {execution?.length > 0 && (
+              <div>
+                <h4 className="font-medium text-physio-mocha text-left uppercase">
+                  Execution
+                </h4>
+                <ul className="pl-4 text-physio-amber text-left list-none">
+                  {execution.map((step, index) => (
+                    <li key={`${_id}-exec-${index}`}>{step}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {endPosition?.length > 0 && (
+              <div>
+                <h4 className="font-medium text-physio-mocha text-left uppercase">
+                  End Position
+                </h4>
+                <ul className="pl-4 text-physio-amber text-left list-none">
+                  {endPosition.map((step, index) => (
+                    <li key={`${_id}-end-${index}`}>{step}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="mt-4">
+              {repetitions && (
+                <div>
+                  <h4 className="font-medium text-physio-mocha text-left uppercase">
+                    Repetitions
+                  </h4>
+                  <p className="text-physio-amber text-left pl-4">{repetitions}</p>
+                </div>
+              )}
+
+              {note && note !== "N/A" && (
+                <div>
+                  <h4 className="font-medium text-physio-mocha text-left uppercase">
+                    Note
+                  </h4>
+                  <p className="text-physio-amber text-left pl-4">{note}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         <button
           onClick={handleCardClick}

@@ -1,4 +1,3 @@
-// src/components/sections/AllExercises.jsx
 import { useState, useEffect } from 'react';
 import { Loader } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -75,9 +74,7 @@ const AllExercises = () => {
           {exercises.map((exercise) => (
             <CompactWorkoutCard
               key={exercise._id}
-              id={exercise._id}
-              image={exercise.image}
-              category={exercise.category}
+              exercise={exercise}
               onClick={() => handleCardClick(exercise)}
             />
           ))}

@@ -4,16 +4,11 @@ import Header from './Header';
 
 
 const MainLayout = ({ children }) => {
-  console.log('MainLayout rendering');  // Debug log
   return (
-    <div className='min-h-screen bg-physio-cream/40 flex flex-col'>
+    <div className='min-h-screen bg-physio-cream/80 flex flex-col'>
       <Header />
-
-      {/*Main Content*/}
       <main className='flex-grow'>
-
         <Outlet />
-
       </main>
 
       {/*Footer*/}

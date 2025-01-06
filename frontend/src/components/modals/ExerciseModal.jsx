@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import CloseHeader from '../navigation/CloseHeader';
@@ -9,22 +8,22 @@ import { useFavorites } from '../../hooks/useFavorites';
 const ExerciseModal = ({
   isOpen,
   onClose,
-  id,
+  _id,
   image = 'PlaceholderPhysioApp.svg',
   title = "Placeholder Title",
   category = [],
 }) => {
   const [isHeartHovered, setIsHeartHovered] = useState(false);
   const { addToFavorites } = useFavorites();
-  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
   const handleFavoriteClick = async (e) => {
+    console.log('Modal exerciseId:', _id);
     e.stopPropagation();
     try {
-      await addToFavorites(id, {
-        id,
+      await addToFavorites(_id, {
+        _id,
         image,
         title,
         category

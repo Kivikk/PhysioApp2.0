@@ -6,7 +6,7 @@ import WorkoutPlans from "../components/sections/WorkoutPlans";
 const Landing = () => {
   console.log('Landing Page rendering');
   return (
-    <div className="min-h-screen bg-physio-cream">
+    <div className="min-h-screen bg-physio-cream/80">
       {/* Header Section */}
       <div className="container mx-auto px-4 mb-0">
         <h1 className="text-3xl font-bold text-physio-chocolate text-center py-8">
@@ -19,16 +19,18 @@ const Landing = () => {
         <AllExercises />
       </div>
 
-      {/* Kategorien Section mit vollem Hintergrund */}
-      <div className="w-full bg-physio-Petrol/60 py-12">
+      {/* Kategorien voller Hintergrund */}
+      <div className="w-full bg-physio-Petrol/80 py-12">
         <div className="container mx-auto px-4">
           <CategoryExercises />
         </div>
       </div>
 
-      {/* Übungspläne */}
-      <div className="container mx-auto px-4 my-12">
-        <WorkoutPlans />
+      {/* Übungspläne voller Hintergrund */}
+      <div className="w-full bg-physio-mocha/80 py-12">
+        <div className="container mx-auto px-4 my-12">
+          <WorkoutPlans />
+        </div>
       </div>
     </div>
   );

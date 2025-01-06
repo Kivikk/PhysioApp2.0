@@ -1,70 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Loader } from 'lucide-react';
+import toast from 'react-hot-toast';
 import CompactWorkoutCard from '../cards/CompactWorkoutCard';
 import ExerciseModal from '../modals/ExerciseModal';
-import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
-
-const categories = [
-  {
-    title: "Beine",
-    exercises: [
-      { id: "legs1", image: "Beinheben.svg", category: ["Legs"] },
-      { id: "legs2", image: "DehnungStandbeins.svg", category: ["Legs"] },
-      { id: "legs3", image: "OberschenkelDehnung.svg", category: ["Legs"] },
-      { id: "legs-hip1", image: "WadenHueftDehnung.svg", category: ["Legs", "Hip"] }
-    ]
-  },
-  {
-    title: "Schultern",
-    exercises: [
-      { id: "shoulders1", image: "BandSchulter.svg", category: ["Shoulders"] },
-      { id: "shoulders2", image: "BandSchulterAussenDreher.svg", category: ["Shoulders"] },
-      { id: "shoulders3", image: "BandSchulterInnenDreher.svg", category: ["Shoulders"] }
-    ]
-  },
-  {
-    title: "Rücken",
-    exercises: [
-      { id: "back1", image: "DehnungKindhaltung.svg", category: ["Back"] },
-      { id: "back2", image: "NackenRolle.svg", category: ["Back"] },
-      { id: "back3", image: "RueckenRolle.svg", category: ["Back"] },
-      { id: "back4", image: "Vorbeuger.svg", category: ["Back"] }
-    ]
-  },
-  {
-    title: "Hüfte",
-    exercises: [
-      { id: "hip1", image: "HueftHebung.svg", category: ["Hip"] },
-      { id: "legs-hip1", image: "WadenHueftDehnung.svg", category: ["Legs", "Hip"] }
-    ]
-  },
-  {
-    title: "Core",
-    exercises: [
-      { id: "core1", image: "RumpfDrehungBoden.svg", category: ["Core"] },
-      { id: "core2", image: "RumpfDrehungWand.svg", category: ["Core"] }
-    ]
-  },
-  {
-    title: "Arme",
-    exercises: [
-      { id: "arms1", image: "Stabrotation.svg", category: ["Arms"] }
-    ]
-  }
-];
+import { getAllExercises } from '../../services/api/index.js';
 
 const CategoryExercises = () => {
+  const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedExercise, setSelectedExercise] = useState(null);
 
+  useEffect(() => {
+    const fetchExercises = async () => {
+      try {
+        setLoading(true);
+        const result = await getAllExercises();
+
+        if (!result || !result.success) {
+          throw new Error(result?.error || 'Failed to fetch exercises');
+        }
+
+        setExercises(result.data);
+      } catch (err) {
+        setError(err.message);
+        toast.error('Fehler beim Laden der Übungen');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchExercises();
+  }, []);
+
   const handleCardClick = (exercise) => {
-    setSelectedExercise({
-      ...exercise,
-      title: exercise.title || `${exercise.category[0]} Übung`
-    });
+    setSelectedExercise(exercise);
   };
 
   const handleCloseModal = () => {
     setSelectedExercise(null);
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[200px] border border-dashed border-gray-300 rounded-lg">
+        <Loader className="w-8 h-8 text-physio-mocha animate-spin" />
+        <span className="ml-2">Laden...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-8">
+        <p className="text-red-500">Ein Fehler ist aufgetreten: {error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-4 py-2 bg-physio-mocha text-white rounded-md hover:bg-physio-chocolate"
+        >
+          Neu laden
+        </button>
+      </div>
+    );
+  }
+
+  // Gruppiere Übungen nach Kategorien
+  const exercisesByCategory = exercises.reduce((acc, exercise) => {
+    exercise.category.forEach(cat => {
+      if (!acc[cat]) {
+        acc[cat] = [];
+      }
+      acc[cat].push(exercise);
+    });
+    return acc;
+  }, {});
 
   return (
     <div>
@@ -72,16 +81,16 @@ const CategoryExercises = () => {
         Übungskarten nach Kategorien
       </h2>
       <div className="space-y-8">
-        {categories.map((category, idx) => (
-          <div key={idx} className="bg-physio-cream rounded-lg shadow-md p-4">
+        {Object.entries(exercisesByCategory).map(([category, categoryExercises]) => (
+          <div key={category} className="bg-physio-cream rounded-lg shadow-md p-4">
             <h3 className="text-xl font-medium text-physio-chocolate mb-4 text-left">
-              {category.title}
+              {category}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {category.exercises.map((exercise) => (
+              {categoryExercises.map((exercise) => (
                 <CompactWorkoutCard
-                  key={exercise.id}
-                  {...exercise}
+                  key={exercise._id}
+                  exercise={exercise}
                   onClick={() => handleCardClick(exercise)}
                 />
               ))}
