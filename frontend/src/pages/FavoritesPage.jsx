@@ -19,6 +19,19 @@ const FavoritesPage = () => {
     loadFavorites();
   }, [getFavoriteExercises]);
 
+
+  useEffect(() => {
+    const handleFavoritesUpdate = (event) => {
+      const { action, id } = event.detail;
+      if (action === 'remove') {
+        setFavorites(current => current.filter(exercise => exercise._id !== id));
+      }
+    };
+    window.addEventListener('favoritesUpdated', handleFavoritesUpdate);
+    return () => window.removeEventListener('favoritesUpdated', handleFavoritesUpdate);
+  }, []);
+
+
   const handleFavoriteChange = (newFavoriteState, exerciseId) => {
     if (!newFavoriteState) {
       removeFromFavorites(exerciseId);
@@ -42,7 +55,7 @@ const FavoritesPage = () => {
           </h1>
 
 
-          <div className="bg-physio-cream/90 hover:bg-physio-cream rounded-full">
+          <div >
             <CloseHeader onClose={() => navigate('/')} />
           </div>
         </div>

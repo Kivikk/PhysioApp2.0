@@ -54,7 +54,7 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
       onClick={showDetails ? undefined : handleCardClick}
       className="bg-physio-cream rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
     >
-      <div className={`relative h-48 ${backgroundColorClass}`}>
+      <div className={`relative h-64 ${backgroundColorClass}`}>
         <img
           src={images[image] || images['PlaceholderPhysioApp.svg']}
           alt={title}
@@ -171,7 +171,7 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
           )}
           <button
             onClick={handleCardClick}
-            className="inline-block w-full px-4 py-2 bg-physio-cream text-physio-chocolate rounded-md hover:bg-physio-tan transition-colors duration-200"
+            className="inline-block w-full px-4 py-2 bg-physio-sirocco text-physio-chocolate hover:bg-physio-tan hover:text-physio-chocolate rounded-md transition-colors duration-200"
           >
             Details anzeigen
           </button>

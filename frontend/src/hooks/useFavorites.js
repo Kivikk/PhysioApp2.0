@@ -6,16 +6,14 @@ const STORAGE_KEY = 'physioapp_favorites';
 
 export const useFavorites = () => {
   const { showToast } = useToast();
-  const [favoriteCount, setFavoriteCount] = useState(0);
-
   const [favorites, setFavorites] = useState(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      const parsedFavorites = stored ? JSON.parse(stored) : {};
+      if (!stored) return {};
 
-      // Ungültige IDs entfernen
-      const cleanedFavorites = Object.entries(parsedFavorites).reduce((acc, [id, value]) => {
-        // Erweiterte Validierung
+      const parsedFavorites = JSON.parse(stored);
+
+      const validFavorites = Object.entries(parsedFavorites).reduce((acc, [id, value]) => {
         if (
           id &&
           id !== 'undefined' &&
@@ -26,26 +24,28 @@ export const useFavorites = () => {
         ) {
           acc[id] = value;
         } else {
-          console.warn(`Invalid favorite entry removed: ID ${id}`);
+          console.warn(`Invalid favorite entry removed: ${id}`);
         }
         return acc;
       }, {});
 
-      // Counter initial setzen
-      setFavoriteCount(Object.keys(cleanedFavorites).length);
 
-      // Bereinigten Stand gleich im localStorage speichern
-      if (Object.keys(cleanedFavorites).length !== Object.keys(parsedFavorites).length) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cleanedFavorites));
+      if (Object.keys(validFavorites).length !== Object.keys(parsedFavorites).length) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(validFavorites));
         showToast('Ungültige Favoriten wurden entfernt', {
           type: 'info',
           duration: 3000
         });
       }
 
-      return cleanedFavorites;
+      // Bei der Initialisierung bereits ein Event auslösen
+      setTimeout(() => {
+        emitFavoritesUpdate(validFavorites);
+      }, 0);
+
+      return validFavorites;
     } catch (error) {
-      console.error('Error reading favorites:', error);
+      console.error('Error initializing favorites:', error);
       showToast('Fehler beim Laden der Favoriten', {
         type: 'error',
         duration: 5000
@@ -54,27 +54,91 @@ export const useFavorites = () => {
     }
   });
 
+
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === STORAGE_KEY) {
+        try {
+          const newFavorites = JSON.parse(e.newValue) || {};
+          setFavorites(newFavorites);
+        } catch (error) {
+          console.error('Error handling storage change:', error);
+        }
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    try {
+      const storedFavorites = localStorage.getItem(STORAGE_KEY);
+      const currentFavoritesString = JSON.stringify(favorites);
+
+      if (storedFavorites !== currentFavoritesString) {
+        localStorage.setItem(STORAGE_KEY, currentFavoritesString);
+        console.log('Favorites synchronized with localStorage:', favorites);
+      }
+    } catch (error) {
+      console.error('Error synchronizing favorites:', error);
+    }
+  }, [favorites]);
+
+
+  // Neue Funktion für Event-Emission
+  const emitFavoritesUpdate = useCallback((updatedFavorites) => {
+    const event = new CustomEvent('favoritesUpdated', {
+      detail: {
+        favorites: updatedFavorites,
+        count: Object.keys(updatedFavorites).length,
+        timestamp: Date.now()
+      }
+    });
+    window.dispatchEvent(event);
+  }, []);
+
   const isFavorite = useCallback((exerciseId) => {
     return Boolean(favorites[exerciseId]);
   }, [favorites]);
 
-  const removeFromFavorites = useCallback((exerciseId) => {
+
+
+
+  const removeFromFavorites = useCallback(async (exerciseId) => {
     try {
-      // Erst den aktuellen Stand aus dem localStorage holen
+      // Aktuellen Stand aus localStorage holen
       const currentStorage = localStorage.getItem(STORAGE_KEY);
       const currentFavorites = currentStorage ? JSON.parse(currentStorage) : {};
 
-      // Exercise aus den Favoriten entfernen
+      // Übung entfernen
       delete currentFavorites[exerciseId];
 
-      // Neuen Stand im localStorage speichern
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentFavorites));
+      // Synchrone Operationen in dieser Reihenfolge
+      setFavorites(currentFavorites);  // React State aktualisieren
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentFavorites));  // localStorage aktualisieren
 
-      // State aktualisieren
-      setFavorites(currentFavorites);
+      // Event mit aktualisierten Daten auslösen
+      const event = new CustomEvent('favoritesUpdated', {
+        detail: {
+          favorites: currentFavorites,
+          count: Object.keys(currentFavorites).length,
+          timestamp: Date.now(),
+          action: 'remove',
+          id: exerciseId,
+          source: 'removeFromFavorites'
+        }
+      });
+      window.dispatchEvent(event);
 
-      // Event triggern für Header-Update
-      window.dispatchEvent(new Event('favoritesUpdated'));
+      // Log für Debugging
+      console.log('Removed from favorites:', {
+        exerciseId,
+        currentStorageAfterRemove: localStorage.getItem(STORAGE_KEY),
+        remainingFavorites: currentFavorites
+      });
 
       showToast('Übung erfolgreich aus Favoriten entfernt', {
         type: 'success',
@@ -90,6 +154,8 @@ export const useFavorites = () => {
       return false;
     }
   }, [showToast]);
+
+
 
   const addToFavorites = useCallback(async (exerciseId, exerciseData) => {
     try {
@@ -117,20 +183,19 @@ export const useFavorites = () => {
         note: exerciseData.note || ''
       };
 
-      setFavorites(prev => {
-        const newFavorites = {
-          ...prev,
-          [exerciseId]: exerciseWithId
-        };
+      const updatedFavorites = {
+        ...favorites,
+        [exerciseId]: exerciseWithId
+      };
 
-        // Update localStorage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(newFavorites));
+      // Erst State aktualisieren
+      setFavorites(updatedFavorites);
 
-        // Update count
-        setFavoriteCount(Object.keys(newFavorites).length);
+      // Dann localStorage
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedFavorites));
 
-        return newFavorites;
-      });
+      // Dann Event auslösen
+      emitFavoritesUpdate(updatedFavorites);
 
       showToast('Übung erfolgreich zu Favoriten hinzugefügt', {
         type: 'success',
@@ -142,22 +207,24 @@ export const useFavorites = () => {
       console.error('Error adding to favorites:', error);
       return false;
     }
-  }, [favorites, showToast]);
+  }, [favorites, showToast, emitFavoritesUpdate]);
+
+
 
   const toggleFavorite = useCallback(async (exerciseId) => {
     try {
-      if (isFavorite(exerciseId)) {
-        console.log('Exercise is already favorite, removing...');
-        const success = removeFromFavorites(exerciseId);
-        return !success; // Umkehrung des Rückgabewerts für den Toggle-Status
+      console.log('Toggle favorite for exercise:', exerciseId);
+      console.log('Current favorites state:', favorites);
+
+      if (favorites[exerciseId]) {
+        console.log('Removing from favorites...');
+        return await removeFromFavorites(exerciseId);
       } else {
-        console.log('Exercise is not favorite, fetching from API...');
+        console.log('Adding to favorites...');
         const result = await getExerciseById(exerciseId);
-        console.log('API fetch result:', result);
 
         if (result.success) {
-          const success = await addToFavorites(exerciseId, result.data);
-          return success;
+          return await addToFavorites(exerciseId, result.data);
         }
         throw new Error(`Übung konnte nicht geladen werden`);
       }
@@ -169,24 +236,34 @@ export const useFavorites = () => {
       });
       return false;
     }
-  }, [isFavorite, removeFromFavorites, addToFavorites, showToast]);
+  }, [favorites, removeFromFavorites, addToFavorites, showToast]);
 
-  // Update FavoritesPage unmittelbar nach dem Entfernen
+
+
   const getFavoriteExercises = useCallback(async () => {
+    // Erstelle eine Map für Request-Tracking
+    const requestMap = new Map();
     const favoriteIds = Object.keys(favorites);
+
     try {
-      const exercisesPromises = favoriteIds.map(id => getExerciseById(id));
-      const results = await Promise.all(exercisesPromises);
-      return results
-        .filter(result => result.success)
-        .map(result => result.data);
+      // Verarbeite jede ID nur einmal
+      for (const id of favoriteIds) {
+        if (!requestMap.has(id)) {
+          const result = await getExerciseById(id);
+          if (result.success) {
+            requestMap.set(id, result.data);
+          }
+        }
+      }
+
+      // Konvertiere Map zu Array
+      return Array.from(requestMap.values());
     } catch (error) {
       console.error('Error fetching favorites:', error);
       return [];
     }
   }, [favorites]);
 
-  // Getter für den Counter
   const getFavoriteCount = useCallback(() => {
     return Object.keys(favorites).length;
   }, [favorites]);

@@ -1,4 +1,5 @@
-import React from "react";
+// src/components/layout/Header.jsx
+import React, { useState, useEffect } from "react";  // <-- Hier fehlten die Imports
 import { useNavigate } from "react-router-dom";
 import { User, Heart, LogIn } from "../../utils/icons";
 import { useFavorites } from "../../hooks/useFavorites";
@@ -7,8 +8,20 @@ import logo from "../../assets/logo.svg";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { getFavoriteCount } = useFavorites();
-  const favoriteCount = getFavoriteCount();
+  const [favoriteCount, setFavoriteCount] = useState(() => {
+    const stored = localStorage.getItem('physioapp_favorites');
+    return stored ? Object.keys(JSON.parse(stored)).length : 0;
+  });
+
+  useEffect(() => {
+    const handleFavoritesUpdate = (event) => {
+      const { count } = event.detail;
+      setFavoriteCount(count);
+    };
+
+    window.addEventListener('favoritesUpdated', handleFavoritesUpdate);
+    return () => window.removeEventListener('favoritesUpdated', handleFavoritesUpdate);
+  }, []);
 
   return (
     <header className="bg-physio-safari/75 shadow-sm">

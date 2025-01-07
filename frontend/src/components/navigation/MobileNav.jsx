@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+// src/components/navigation/MobileNav.jsx
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Heart, User, LogIn } from '../../utils/icons';
-import { useFavorites } from '../../hooks/useFavorites';
+import { Menu, Heart, User, LogIn } from '../../utils/icons';
+import CloseHeader from './CloseHeader';
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { getFavoriteCount } = useFavorites();
-  const favoriteCount = getFavoriteCount();
+
+  const [favoriteCount, setFavoriteCount] = useState(() => {
+    const stored = localStorage.getItem('physioapp_favorites');
+    return stored ? Object.keys(JSON.parse(stored)).length : 0;
+  });
+
+  useEffect(() => {
+    const handleFavoritesUpdate = (event) => {
+      const { count } = event.detail;
+      setFavoriteCount(count);
+    };
+
+    window.addEventListener('favoritesUpdated', handleFavoritesUpdate);
+    return () => window.removeEventListener('favoritesUpdated', handleFavoritesUpdate);
+  }, []);
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -16,7 +30,6 @@ const MobileNav = () => {
 
   return (
     <>
-      {/* Mobile Navigation Button */}
       <button
         className="lg:hidden p-2 text-physio-chocolate hover:bg-physio-cream/10 rounded-lg"
         onClick={() => setIsOpen(true)}
@@ -25,30 +38,19 @@ const MobileNav = () => {
         <Menu className="w-6 h-6" />
       </button>
 
-      {/* Mobile Navigation Drawer */}
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Overlay */}
           <div
             className="fixed inset-0 bg-physio-chocolate/50"
             onClick={() => setIsOpen(false)}
           />
 
-          {/* Drawer */}
           <div className="fixed right-0 top-0 h-full w-64 bg-white shadow-lg">
-            {/* Drawer Header */}
             <div className="flex items-center justify-between p-4 border-b border-physio-cream">
               <h2 className="text-lg font-semibold text-physio-chocolate">Menu</h2>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-physio-cream/10 rounded-lg"
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5 text-physio-chocolate" />
-              </button>
+              <CloseHeader onClose={() => setIsOpen(false)} />
             </div>
 
-            {/* Navigation Links */}
             <nav className="p-4">
               <ul className="space-y-4">
                 <li>
