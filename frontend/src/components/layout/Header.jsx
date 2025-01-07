@@ -8,6 +8,7 @@ import logo from "../../assets/logo.svg";
 const Header = () => {
   const navigate = useNavigate();
   const { getFavoriteCount } = useFavorites();
+  const favoriteCount = getFavoriteCount();
 
   return (
     <header className="bg-physio-safari/75 shadow-sm">
@@ -35,10 +36,9 @@ const Header = () => {
               aria-label="Favoriten"
             >
               <Heart className="h-5 w-5 text-physio-cream" />
-              {getFavoriteCount() > 0 && (
-                <span className="absolute -top-2 -right-2 bg-physio-terrakotta text-white
-                                text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  {getFavoriteCount()}
+              {favoriteCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-physio-terrakotta text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {favoriteCount}
                 </span>
               )}
             </button>
@@ -57,7 +57,6 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
           <MobileNav />
         </div>
       </div>

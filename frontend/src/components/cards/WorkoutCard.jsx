@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import { useFavorites } from '../../hooks/useFavorites';
+import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
 
 const WorkoutCard = ({ exercise, showDetails = false }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const navigate = useNavigate();
+  const [isHeartHovered, setIsHeartHovered] = useState(false);
 
   if (!exercise || !exercise._id) {
     console.error('Invalid exercise data provided');
@@ -38,55 +40,57 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
     navigate(`/exercise/${_id}`);
   };
 
-  const getCategoryColor = (cat) => {
-    const colors = {
-      'Arms': 'bg-physio-terrakotta',
-      'Legs': 'bg-physio-sage',
-      'Hip': 'bg-physio-bluegray',
-      'Shoulder': 'bg-physio-Petrol',
-      'Back': 'bg-physio-mocha',
-      'Core': 'bg-physio-olive'
-    };
-    return colors[cat] || 'bg-physio-cream';
+  const getCategoryColor = (categories) => {
+    if (categories && categories.length > 0) {
+      return categoryColorMap[categories[0]] || defaultCategoryColor;
+    }
+    return defaultCategoryColor;
   };
+
+  const backgroundColorClass = getCategoryColor(category);
 
   return (
     <div
-      onClick={handleCardClick}
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+      onClick={showDetails ? undefined : handleCardClick}
+      className="bg-physio-cream rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className={`relative h-48 ${backgroundColorClass}`}>
         <img
           src={images[image] || images['PlaceholderPhysioApp.svg']}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain scale-150"
           onError={(e) => {
             e.target.src = images['PlaceholderPhysioApp.svg'];
           }}
         />
         <button
-          onClick={handleFavoriteClick}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleFavoriteClick(e);
+          }}
+          onMouseEnter={() => setIsHeartHovered(true)}
+          onMouseLeave={() => setIsHeartHovered(false)}
+          className="absolute top-2 right-2 p-2 bg-physio-cream/90 hover:bg-physio-cream rounded-full transition-all duration-200 hover:scale-110"
         >
           <Heart
-            size={20}
-            className={isFavorite(_id) ? 'fill-red-500 text-red-500' : 'text-gray-600'}
+            className={`w-6 h-6 text-physio-terrakotta ${isHeartHovered ? '' : 'fill-current'
+              }`}
           />
         </button>
-      </div>
 
-      <div className="p-4">
-        <div className="flex flex-wrap gap-2 mb-2">
+        <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">
           {Array.isArray(category) && category.map((cat, index) => (
             <span
               key={`${_id}-${cat}-${index}`}
-              className={`inline-block px-3 py-1 rounded-full text-sm text-white ${getCategoryColor(cat)}`}
+              className="text-sm px-2 py-1 rounded bg-physio-cream/40 text-physio-chocolate"
             >
               {cat}
             </span>
           ))}
         </div>
+      </div>
 
+      <div className="p-4">
         <h3 className="text-xl font-bold mb-2 text-physio-chocolate">{title}</h3>
 
         {showDetails && (
@@ -152,12 +156,26 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
           </div>
         )}
 
-        <button
-          onClick={handleCardClick}
-          className="inline-block w-full px-4 py-2 bg-physio-cream text-physio-chocolate rounded-md hover:bg-physio-tan transition-colors duration-200"
-        >
-          Details anzeigen
-        </button>
+
+        <div className="mt-4 space-y-2">
+          {showDetails && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                // Hier später die Logik für das Hinzufügen zum Übungsplan
+              }}
+              className="inline-block w-full px-4 py-2 bg-physio-sage text-white rounded-md hover:bg-physio-sage/90 transition-colors duration-200"
+            >
+              Zum Übungsplan hinzufügen
+            </button>
+          )}
+          <button
+            onClick={handleCardClick}
+            className="inline-block w-full px-4 py-2 bg-physio-cream text-physio-chocolate rounded-md hover:bg-physio-tan transition-colors duration-200"
+          >
+            Details anzeigen
+          </button>
+        </div>
       </div>
     </div>
   );

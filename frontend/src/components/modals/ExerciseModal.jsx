@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import CloseHeader from '../navigation/CloseHeader';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
 import { useFavorites } from '../../hooks/useFavorites';
+
 
 const ExerciseModal = ({
   isOpen,
@@ -15,6 +17,7 @@ const ExerciseModal = ({
 }) => {
   const [isHeartHovered, setIsHeartHovered] = useState(false);
   const { addToFavorites } = useFavorites();
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
@@ -22,13 +25,16 @@ const ExerciseModal = ({
     console.log('Modal exerciseId:', _id);
     e.stopPropagation();
     try {
-      await addToFavorites(_id, {
+      const success = await addToFavorites(_id, {
         _id,
         image,
         title,
         category
       });
-      onClose();
+      if (success) {
+        onClose();
+        navigate('/favorites');
+      }
     } catch (error) {
       console.error('Error adding to favorites:', error);
     }
@@ -47,12 +53,10 @@ const ExerciseModal = ({
               onMouseEnter={() => setIsHeartHovered(true)}
               onMouseLeave={() => setIsHeartHovered(false)}
               onClick={handleFavoriteClick}
-              className="bg-physio-cream/90 hover:bg-physio-cream rounded-full p-2
-                      transition-all duration-200 hover:scale-110"
+              className="bg-physio-cream/90 hover:bg-physio-cream rounded-full p-2 transition-all duration-200 hover:scale-110"
             >
               <Heart
-                className={`w-6 h-6 text-physio-terrakotta ${isHeartHovered ? 'fill-current' : ''
-                  }`}
+                className={`w-6 h-6 text-physio-terrakotta ${isHeartHovered ? 'fill-current' : ''}`}
               />
             </button>
 
@@ -84,21 +88,6 @@ const ExerciseModal = ({
           <h2 className="text-2xl font-semibold text-physio-chocolate mb-6">
             {title}
           </h2>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              className="flex-1 bg-physio-sage text-white py-2 px-4 rounded
-                hover:bg-physio-sage/90 transition-colors duration-200"
-            >
-              Zum Übungsplan hinzufügen
-            </button>
-            <button
-              className="flex-1 bg-physio-terrakotta text-white py-2 px-4 rounded
-                hover:bg-physio-terrakotta/90 transition-colors duration-200"
-            >
-              Persönliches Journal
-            </button>
-          </div>
         </div>
       </div>
     </div>

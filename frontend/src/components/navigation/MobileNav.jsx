@@ -7,6 +7,7 @@ const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { getFavoriteCount } = useFavorites();
+  const favoriteCount = getFavoriteCount();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -57,9 +58,9 @@ const MobileNav = () => {
                   >
                     <Heart className="w-5 h-5 mr-3" />
                     <span>Favoriten</span>
-                    {getFavoriteCount() > 0 && (
+                    {favoriteCount > 0 && (
                       <span className="ml-auto bg-physio-terrakotta text-white text-xs px-2 py-1 rounded-full">
-                        {getFavoriteCount()}
+                        {favoriteCount}
                       </span>
                     )}
                   </button>

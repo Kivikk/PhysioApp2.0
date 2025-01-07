@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import WorkoutCard from '../components/cards/WorkoutCard';
 import { useFavorites } from '../hooks/useFavorites';
-import { X } from '../utils/icons';
+import CloseHeader from '../components/navigation/CloseHeader';
 
 const FavoritesPage = () => {
   const [favorites, setFavorites] = useState([]);
@@ -22,7 +22,10 @@ const FavoritesPage = () => {
   const handleFavoriteChange = (newFavoriteState, exerciseId) => {
     if (!newFavoriteState) {
       removeFromFavorites(exerciseId);
-      setFavorites(prev => prev.filter(ex => ex._id !== exerciseId));
+      // Sofortige lokale UI-Aktualisierung
+      setFavorites(currentFavorites =>
+        currentFavorites.filter(exercise => exercise._id !== exerciseId)
+      );
     }
   };
 
@@ -37,13 +40,11 @@ const FavoritesPage = () => {
           <h1 className="text-2xl font-semibold text-physio-chocolate">
             Meine Favoriten
           </h1>
-          <button
-            onClick={() => navigate('/')}
-            className="p-2 hover:bg-physio-safari/60 rounded-full transition-colors"
-            aria-label="Schließen"
-          >
-            <X className="w-6 h-6 text-physio-chocolate" />
-          </button>
+
+
+          <div className="bg-physio-cream/90 hover:bg-physio-cream rounded-full">
+            <CloseHeader onClose={() => navigate('/')} />
+          </div>
         </div>
       </div>
 

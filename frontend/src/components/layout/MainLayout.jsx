@@ -5,7 +5,7 @@ import Header from './Header';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className='min-h-screen bg-physio-cream/80 flex flex-col'>
+    <div className='min-h-screen bg-physio-cream/60 flex flex-col'>
       <Header />
       <main className='flex-grow'>
         <Outlet />
