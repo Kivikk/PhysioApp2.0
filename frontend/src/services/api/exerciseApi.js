@@ -5,7 +5,7 @@ const EXERCISE_URL = '/api/cards';
 export const getAllExercises = async () => {
   try {
     console.log('API URL:', EXERCISE_URL);
-    console.log('Full URL:', `${BASE_URL}${EXERCISE_URL}`);
+    console.log('API Config:', apiClient.defaults.baseURL);
     const response = await apiClient.get(EXERCISE_URL);
     console.log('API Response:', response.data);
     return { success: true, data: response.data };
