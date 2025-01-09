@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 const API_URLS = {
   development: 'http://localhost:8000',
-  production: 'http://localhost:10000',  // Später auf tatsächliche Production URL ändern
+  production: 'https://phhttps://physioapp2-0backend.onrender.com',  // Update with your production URL
 };
 
 const config = {

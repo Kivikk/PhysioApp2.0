@@ -1,6 +1,5 @@
 import apiClient from './config';
 
-
 const EXERCISE_URL = '/api/cards';
 
 export const getAllExercises = async () => {
@@ -17,20 +16,12 @@ export const getAllExercises = async () => {
 
 export const getExerciseById = async (id) => {
   if (!id) {
-    console.log('Invalid ID provided to getExerciseById'); // Hier einfügen
     return { success: false, error: 'Invalid ID' };
   }
   try {
-    console.log('API call: getExerciseById with ID:', id);
     const response = await apiClient.get(`${EXERCISE_URL}/${id}`);
-    console.log('API response:', response.data);
     return { success: true, data: response.data };
   } catch (error) {
-    console.error('API Error:', {
-      status: error.response?.status,
-      message: error.response?.data?.message,
-      error
-    });
     return {
       success: false,
       error: error.response?.data?.message || 'Übung nicht gefunden'
@@ -50,7 +41,7 @@ export const getExercisesByCategory = async (category) => {
   }
 };
 
-// Protected
+// Protected Routes
 export const createExercise = async (exerciseData) => {
   try {
     const response = await apiClient.post(EXERCISE_URL, exerciseData);
@@ -63,7 +54,6 @@ export const createExercise = async (exerciseData) => {
   }
 };
 
-// Protected
 export const updateExercise = async (id, exerciseData) => {
   try {
     const response = await apiClient.patch(`${EXERCISE_URL}/${id}`, exerciseData);
@@ -76,7 +66,6 @@ export const updateExercise = async (id, exerciseData) => {
   }
 };
 
-// Protected
 export const deleteExercise = async (id) => {
   try {
     await apiClient.delete(`${EXERCISE_URL}/${id}`);
