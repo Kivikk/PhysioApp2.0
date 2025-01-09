@@ -1,4 +1,3 @@
-// src/components/navigation/MobileNav.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, Heart, User, LogIn } from '../../utils/icons';
@@ -45,8 +44,8 @@ const MobileNav = () => {
             onClick={() => setIsOpen(false)}
           />
 
-          <div className="fixed right-0 top-0 h-full w-64 bg-white shadow-lg">
-            <div className="flex items-center justify-between p-4 border-b border-physio-cream">
+          <div className="fixed right-0 top-0 h-full w-64 bg-physio-cream shadow-lg">
+            <div className="flex items-center justify-between p-4 border-b border-x-physio-chocolate">
               <h2 className="text-lg font-semibold text-physio-chocolate">Menu</h2>
               <CloseHeader onClose={() => setIsOpen(false)} />
             </div>

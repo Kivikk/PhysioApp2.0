@@ -18,7 +18,7 @@ const CompactWorkoutCard = ({ exercise, onClick = () => { } }) => {
   return (
     <div
       onClick={() => onClick(exercise)}
-      className="group bg-white rounded shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:shadow-lg"
+      className="group bg-white rounded shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:brightness-90"
     >
       <div className={`relative ${backgroundColorClass} transition-all duration-200 group-hover:brightness-90`}>
         <div className="w-full h-48">
@@ -26,6 +26,7 @@ const CompactWorkoutCard = ({ exercise, onClick = () => { } }) => {
             src={images[image]}
             alt="Exercise illustration"
             className="w-full h-full object-contain scale-150"
+
             onError={(e) => {
               e.target.src = images['PlaceholderPhysioApp.svg'];
             }}
@@ -33,7 +34,7 @@ const CompactWorkoutCard = ({ exercise, onClick = () => { } }) => {
         </div>
 
         <div className="absolute inset-0 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <div className="bg-white/40 rounded-full p-2">
+          <div className="bg-white/80 rounded-full p-2">
             <ChevronRight className="w-6 h-6 text-physio-chocolate" />
           </div>
         </div>
