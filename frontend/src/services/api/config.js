@@ -3,10 +3,15 @@ import Cookies from 'js-cookie';
 
 const API_URLS = {
   development: 'http://localhost:8000',
-  production: 'https://https://physioapp2-0backend.onrender.com',  // Updated with production URL
+  production: 'https://physioapp2-0backend.onrender.com',  // Updated with production URL
 };
 
-console.log('Current API URL:', import.meta.env.MODE, API_URLS[import.meta.env.MODE]);
+const mode = import.meta.env.MODE;
+console.log('Environment Mode:', mode);
+console.log('Available URLs:', API_URLS);
+console.log('Selected URL:', API_URLS[mode]);
+
+export const BASE_URL = API_URLS[mode];
 
 const config = {
   baseURL: API_URLS[process.env.NODE_ENV] || API_URLS.development,
