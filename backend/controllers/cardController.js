@@ -4,12 +4,18 @@ import Card from "../models/Card.js";
 // Get all cards
 export const getAllCards = async (req, res) => {
   try {
+    console.log('Fetching cards...');
     const cards = await Card.find().sort({ createdAt: -1 });
+    console.log(`Found ${cards.length} cards`);
+    console.log('First card:', cards[0]?.title);
+    console.log('Last card:', cards[cards.length - 1]?.title);
     res.status(200).json(cards);
   } catch (error) {
+    console.error('Error in getAllCards:', error);
     res.status(500).json({ message: error.message });
   }
 };
+
 
 // Get single card by id
 export const getCardById = async (req, res) => {
