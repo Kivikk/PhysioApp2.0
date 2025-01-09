@@ -1,18 +1,26 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import connectDB from './config/db.js';
+import cardRoutes from './routes/cardRoutes.js';
+
 
 dotenv.config();
-
-// Test ob env geladen wird
-// console.log('MongoDB URI:', process.env.MONGODB_URI);
 
 connectDB();
 
 const app = express();
 
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
 
+app.use('/api/cards', cardRoutes);
+
+// Test Route
 app.get('/test', (req, res) => {
   res.json({ message: 'Server is running!' });
 });

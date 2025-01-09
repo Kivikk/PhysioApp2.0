@@ -12,7 +12,7 @@ export const getAllCards = async (req, res) => {
 };
 
 // Get single card by id
-export const getCardByID = async (req, res) => {
+export const getCardById = async (req, res) => {
   try {
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {

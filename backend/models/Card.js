@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const EXERCISE_CATEGROIES = [
+const EXERCISE_CATEGORIES = [
   'Hip',
   'Legs',
-  'Back',
   'Shoulders',
+  'Back',
+  'Arms',
   'Core'
 ];
 
@@ -16,28 +17,32 @@ const cardSchema = new Schema({
     trim: true
   },
   category: {
+    type: [String],
+    required: true,
+    validate: {
+      validator: function (categories) {
+        return categories && categories.length > 0;
+      },
+      message: 'Mindestens eine Kategorie muss angegeben werden'
+    }
+  },
+  startingPosition: [{
     type: String,
     required: true,
-    enum: EXERCISE_CATEGROIES,
     trim: true
-  },
-  startingPosition: {
+  }],
+  execution: [{
     type: String,
     required: true,
-    validate: [(val) => val.length > 0]
-  },
-  execution: {
+    trim: true
+  }],
+  endPosition: [{
     type: String,
     required: true,
-    validate: [(val) => val.length > 0]
-  },
-  endPosition: {
-    type: String,
-    required: true,
-    validate: [(val) => val.length > 0]
-  },
+    trim: true
+  }],
   repetitions: {
-    type: Number,
+    type: String,
     required: true,
     trim: true
   },
@@ -49,10 +54,19 @@ const cardSchema = new Schema({
     type: String,
     required: true
   }
-},
-  {
-    timestamps: true
-  });
+}, {
+  timestamps: true
+});
 
-export { EXERCISE_CATEGROIES };
+cardSchema.index({ category: 1 });
+
+cardSchema.pre('save', function (next) {
+  if (this.isModified('category')) {
+    // Entfernt Leerzeichen und Dup
+    this.category = [...new Set(this.category.map(cat => cat.trim()))];
+  }
+  next();
+});
+
+export { EXERCISE_CATEGORIES };
 export default mongoose.model('Card', cardSchema);

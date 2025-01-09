@@ -1,0 +1,416 @@
+[
+  {
+    "title": "Waden- und Hüftdehnung an der Wand",
+    "category": ["Hip","Legs"],
+    "startingPosition": [
+      "Stellen Sie sich mit dem Gesicht zur Wand.",
+      "Stützen Sie die Hände in Brusthöhe an der Wand ab.",
+      "Ein Bein wird im Ausfallschritt nach hinten gesetzt, die Ferse bleibt am Boden."
+    ],
+    "execution": [
+      "Schieben Sie die Hüfte nach vorne.",
+      "Versuchen Sie, das Knie des vorderen Beins zur Wand zu bringen, während das hintere Bein gestreckt bleibt.",
+      "Bauen Sie Spannung im hinteren Bein auf und halten Sie diese während der gesamten Bewegung."
+    ],
+    "endPosition": [
+      "Halten Sie die Spannung am Endpunkt der Bewegung für ca. 20 Sekunden."
+    ],
+    "repetitions": "Einmal halten, dann Seite wechseln.",
+    "note": "Achten Sie darauf, dass die Ferse des hinteren Beins den Boden nicht verlässt, um eine effektive Dehnung zu gewährleisten.",
+    "image": "WadenHueftDehnung.svg"
+  },
+  {
+    "title": "Dehnung des Standbeins",
+    "category": ["Legs","Hip"],
+    "startingPosition": [
+      "Stellen Sie sich gerade vor einen Tisch, in einem Abstand, der es ermöglicht, Spannung aufzubauen, wenn ein Fuß auf die Tischplatte gestellt wird."
+    ],
+    "execution": [
+      "Legen Sie die Ferse des angewinkelten Beins auf die Tischplatte, während die Ferse des Standbeins flach auf dem Boden bleibt.",
+      "Spannen Sie die Muskulatur an und halten Sie die Position."
+    ],
+    "endPosition": ["Halten Sie die Spannung für ca. 20 Sekunden."],
+    "repetitions": "Einmal halten, dann Seite wechseln.",
+    "note": "Achten Sie darauf, dass die Hüfte gerade bleibt und das Standbein stabil ist.",
+    "image": "DehnungStandbeins.svg"
+  },
+  {
+    "title": "Vorbeuge mit gestrecktem Rücken",
+    "category": ["Core", "Hip"],
+    "startingPosition": [
+      "Stellen Sie die Füße hüftbreit auf, der Körper ist aufrecht, die Arme hängen locker seitlich herunter."
+    ],
+    "execution": [
+      "Beugen Sie den Oberkörper langsam über die Hüften nach vorne, wobei der Rücken lang und gestreckt bleibt.",
+      "Strecken Sie die Arme nach unten und ziehen Sie den Rücken weiter in die Länge, während Sie mit den Fingerspitzen den Boden berühren."
+    ],
+    "endPosition": [
+      "Halten Sie die Dehnung für ca. 20 Sekunden und vertiefen Sie diese, indem Sie die Handflächen nach und nach flach auf den Boden bringen."
+    ],
+    "repetitions": "Einmal halten.",
+    "note": "Achten Sie darauf, dass die Dehnung aus der Hüfte kommt und der Rücken während der gesamten Bewegung gerade bleibt.",
+    "image": "Vorbeuger.svg"
+  },
+  {
+    "title": "Rumpfdrehung an der Wand",
+    "category": ["Core","Back"],
+    "startingPosition": [
+      "Knien Sie sich seitlich zur Wand, sodass das Bein, das der Wand zugewandt ist, mit dem Knie auf dem Boden ruht.",
+      "Das andere Bein wird vor Ihnen im rechten Winkel aufgestellt, der Fuß steht fest auf dem Boden.",
+      "Platzieren Sie eine Abstandsrolle zwischen Ihrem Knie und der Wand, um das Knie zu fixieren und die Hüfte stabil zu halten.",
+      "Beide Arme sind nach vorne ausgestreckt, die Hände liegen übereinander."
+    ],
+    "execution": [
+      "Beginnen Sie die Bewegung, indem Sie den Arm, der an der Wand ist, in einem weiten Bogen um 180° zur anderen Seite kreisen lassen.",
+      "Ihre Augen folgen dabei der Hand, um die Bewegung zu unterstützen.",
+      "Während der Bewegung versuchen Sie, die abstehende Schulter so nahe wie möglich an die Wand zu drücken."
+    ],
+    "endPosition": [
+      "Halten Sie kurz die Endposition, wenn der Arm die 180°-Marke erreicht hat.",
+      "Führen Sie die Bewegung dann kontrolliert zurück in die Ausgangsstellung."
+    ],
+    "repetitions": "10 Wiederholungen, dann Seite wechseln.",
+    "note": "Achten Sie darauf, dass die Hüfte und das Knie stabil bleiben und sich nicht mitdrehen, während Sie die Schulter zur Wand hin bewegen.",
+    "image": "RumpfDrehungWand.svg"
+  },
+  {
+    "title": "Dehnung in der Kindhaltung mit Übergang in den herabschauenden Hund",
+    "category": ["Legs","Hip","Back"],
+    "startingPosition": [
+      "Beginnen Sie in der Kindhaltung auf einer Matte, die Knie leicht geöffnet, der Oberkörper ruht auf den Oberschenkeln.",
+      "Die Arme sind nach vorne ausgestreckt, und die Hände so weit wie möglich entlang des Bodens nach vorne geschoben."
+    ],
+    "execution": [
+      "Drücken Sie mit der Kraft Ihrer Arme das Gesäß nach oben und hinten, bis Sie in die Position des herabschauenden Hundes übergehen.",
+      "Schieben Sie die Fersen aktiv nach unten und hinten, um sie in Richtung Boden zu bringen."
+    ],
+    "endPosition": ["Halten Sie die Position für etwa 10 tiefe Atemzüge."],
+    "repetitions": "Einmal halten.",
+    "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Fersen aktiv Richtung Boden geschoben werden, um die Dehnung zu intensivieren.",
+    "image": "DehnungKindhaltung.svg"
+  },
+  {
+    "title": "Rumpfdrehung in Seitlage mit Rolle",
+    "category": ["Core","Shoulder","Back"],
+    "startingPosition": [
+      "Legen Sie sich auf die rechte Körperseite in eine stabile Ausgangslage.",
+      "Das untere Bein ist ausgestreckt, das obere Bein liegt im rechten Winkel angewinkelt auf einer Rolle, um die Hüfte gerade zu halten.",
+      "Beide Arme sind im rechten Winkel ausgestreckt, die Hände übereinandergelegt."
+    ],
+    "execution": [
+      "Führen Sie den oberen Arm in einer geraden Linie um 180° auf die gegenüberliegende Seite.",
+      "Die Augen folgen der Hand."
+    ],
+    "endPosition": [
+      "Die gedrehte Schulter sollte so flach wie möglich auf dem Boden liegen, das angewinkelte Bein bleibt stabil.",
+      "Kehren Sie kontrolliert in die Ausgangsstellung zurück."
+    ],
+    "repetitions": "10 Wiederholungen pro Seite.",
+    "note": "Achten Sie darauf, dass die Hüfte und das Knie stabil bleiben und die Bewegung nur im Oberkörper stattfindet.",
+    "image": "RumpfDrehungBoden.svg"
+  },
+  {
+    "title": "Seitliche Hüfthebung",
+    "category": ["Hip"],
+    "startingPosition": [
+      "Legen Sie sich seitlich auf eine Matte, der Oberkörper ist angehoben und stützt sich auf den unten liegenden Ellbogen, der direkt unter der Schulter platziert ist.",
+      "Die Beine sind ab dem Knie angewinkelt, sodass die Knie einen 90-Grad-Winkel bilden.",
+      "Der Körper ist von Kopf bis zu den Knien in einer geraden Linie ausgerichtet.",
+      "Die Füße liegen übereinander, und die Knie sind ebenfalls übereinander positioniert.",
+      "Die Hand des oberen Arms liegt auf der Hüfte."
+    ],
+    "execution": [
+      "Heben Sie die Hüfte vom Boden ab, indem Sie die seitliche Bauch- und Hüftmuskulatur anspannen, sodass der Körper von den Knien bis zum Kopf eine gerade Linie bildet.",
+      "Achten Sie darauf, dass der Ellbogen fest in den Boden gedrückt wird und der Körper während der gesamten Bewegung stabil bleibt.",
+      "Wenn die Hüfte den höchsten Punkt erreicht hat, halten Sie die Position kurz.",
+      "Senken Sie die Hüfte kontrolliert wieder in Richtung Matte ab, jedoch ohne diese vollständig abzulegen, um die Spannung aufrechtzuerhalten."
+    ],
+    "endPosition": [
+      "Der Körper ist wieder in der Ausgangsposition mit der Hüfte knapp über der Matte."
+    ],
+    "repetitions": "15 Wiederholungen, dann Seite wechseln.",
+    "note": "Achten Sie darauf, dass der Körper während der Bewegung stabil und gerade bleibt, um die Muskulatur optimal zu beanspruchen. Die Spannung sollte während der gesamten Übung aufrechterhalten werden, insbesondere in der Bauch- und Hüftmuskulatur.",
+    "image": "HueftHebung.svg"
+  },
+  {
+    "title": "Seitliche Beinhebung in Seitenlage",
+    "category": ["Legs","Hip"],
+    "startingPosition": [
+      "Legen Sie sich seitlich auf eine Matte.",
+      "Der Oberkörper ist angehoben und stützt sich auf dem am Boden liegenden Ellbogen ab.",
+      "Die Hand liegt flach auf dem Boden und weist vom Körper ab.",
+      "Die Beine sind übereinandergelegt, die Füße liegen aufeinander.",
+      "Die Hand des oben liegenden Arms stützt sich vor dem Oberkörper ab, um die Balance zu halten."
+    ],
+    "execution": [
+      "Heben Sie die Hüfte senkrecht vom Boden ab, sodass Ihr Körper eine gerade Linie bildet.",
+      "In dieser Position heben Sie das oben liegende Bein gestreckt nach oben.",
+      "Senken Sie das Bein langsam wieder ab, ohne es auf dem ruhenden Bein abzulegen."
+    ],
+    "endPosition": [
+      "Das oben liegende Bein kehrt in die Ausgangsposition zurück, ohne den Kontakt zum ruhenden Bein zu verlieren.",
+      "Die Hüfte bleibt während der gesamten Bewegung oben."
+    ],
+    "repetitions": "20 Wiederholungen pro Seite, dann die Seite wechseln.",
+    "note": "Achten Sie darauf, dass der Körper während der gesamten Bewegung stabil und in einer Linie bleibt.",
+    "image": "Beinheben.svg"
+  },
+  {
+    "title": "Diagonale Bauchmuskulatur",
+    "category": ["Back"],
+    "startingPosition": [
+      "Legen Sie sich flach mit dem Rücken auf eine Matte, beide Arme seitlich ausgestreckt.",
+      "Winkeln Sie die Beine an, sodass die Knie über der Hüfte sind und die Unterschenkel parallel zum Boden."
+    ],
+    "execution": [
+      "Heben Sie den Kopf leicht an und runden Sie den Rücken.",
+      "Führen Sie abwechselnd die Hände zu den gegenüberliegenden inneren Knöcheln der Füße."
+    ],
+    "endPosition": [
+      "Berühren Sie abwechselnd die Knöchel, wobei jede Seite 90 Mal berührt wird."
+    ],
+    "repetitions": "Insgesamt ca. 180 Mal, 90 Mal pro Seite.",
+    "note": "Achten Sie darauf, dass die Bewegung kontrolliert und gleichmäßig ausgeführt wird, um die diagonalen Bauchmuskeln effektiv zu trainieren.",
+    "image": "PlaceholderPhysioApp.svg"
+  },
+  {
+    "title": "Nackenmobilisation mit Rolle",
+    "category": ["Core"],
+    "startingPosition": [
+      "Legen Sie sich mit leicht angewinkelten Beinen flach auf den Rücken auf eine Matte.",
+      "Platzieren Sie eine Rolle unter den Halswirbeln."
+    ],
+    "execution": ["Bewegen Sie den Kopf langsam von einer Seite zur anderen."],
+    "endPosition": ["Wiederholen Sie die Bewegung gleichmäßig."],
+    "repetitions": "Führen Sie die Bewegung 15 Mal pro Seite durch.",
+    "note": "Achten Sie auf eine gleichmäßige, langsame Bewegung, um Verspannungen im Nacken zu lösen.",
+    "image": "NackenRolle.svg"
+  },
+  {
+    "title": "Rückenmobilisation mit Rolle",
+    "category": ["Back", "Core"],
+    "startingPosition": [
+      "Setzen Sie sich mit ausgestreckten Beinen auf den Boden und winkeln Sie die Beine ca. 90° an.",
+      "Legen Sie eine Rolle auf den Boden hinter Ihren Körper."
+    ],
+    "execution": [
+      "Lehnen Sie sich zurück, sodass Ihr Rücken auf der Rolle zwischen Lenden- und Brustwirbelsäule liegt.",
+      "Stützen Sie Nacken und Halswirbel mit den Händen, während Sie die Schultern Richtung Boden führen."
+    ],
+    "endPosition": [
+      "Richten Sie den Oberkörper wieder auf, ohne die Position auf der Rolle zu verändern."
+    ],
+    "repetitions": "Wiederholen Sie den Vorgang 3 Mal pro Wirbelbereich bis zu den Schulterblättern und dann zurück.",
+    "note": "Achten Sie darauf, dass der Po und die Beine während der gesamten Übung in ihrer Position bleiben.",
+    "image": "RueckenRolle.svg"
+  },
+  {
+    "title": "Stabrotation im Sitzen",
+    "category": ["Shoulder","Back","core"],
+    "startingPosition": [
+      "Setzen Sie sich auf die Vorderkante eines stabilen Stuhls, sodass die Füße fest auf dem Boden stehen.",
+      "Halten Sie einen Stab mehr als schulterbreit, Arme gestreckt vor sich auf Schulterhöhe."
+    ],
+    "execution": [
+      "Heben Sie den Stab über den Kopf und führen Sie ihn hinter den Körper auf Schulterblatthöhe.",
+      "Drehen Sie den Oberkörper langsam zur rechten Seite und dann zur linken."
+    ],
+    "endPosition": [
+      "Der Oberkörper ist wieder in der Mitte ausgerichtet, die Arme halten den Stab weiterhin gestreckt hinter dem Rücken auf Schulterblatthöhe."
+    ],
+    "repetitions": "10 Wiederholungen pro Seite, insgesamt 3 Sätze.",
+    "note": "Halten Sie den Rücken gerade und vermeiden Sie ein Hohlkreuz.",
+    "image": "Stabrotation.svg"
+  },
+  {
+    "title": "Oberschenkelmuskel dehnen",
+    "category": ["Legs"],
+    "startingPosition": [
+      "Stellen Sie sich aufrecht hin, Füße hüftbreit auseinander.",
+      "Falls nötig, halten Sie sich mit einer Hand an einer Wand fest, um das Gleichgewicht zu sichern."
+    ],
+    "execution": [
+      "Beugen Sie ein Bein nach hinten und greifen Sie den Fuß mit der gleichen Hand.",
+      "Ziehen Sie die Ferse langsam in Richtung Gesäß, bis Sie eine Dehnung im Quadrizeps spüren."
+    ],
+    "endPosition": [
+      "Die Ferse ist so nah wie möglich am Gesäß, und die Dehnung im Quadrizeps ist deutlich spürbar."
+    ],
+    "repetitions": "Halten Sie die Dehnung für 30 Sekunden bis 1 Minute pro Seite.",
+    "note": "Achten Sie darauf, die Dehnung langsam und kontrolliert durchzuführen.",
+    "image": "OberschenkelDehnung.svg"
+  },
+  {
+    "title": "Theraband Seitliche Schultermuskulatur",
+    "category": ["Shoulder", "Arms"],
+    "startingPosition": [
+      "Stehen Sie aufrecht und halten Sie das Theraband schulterbreit vor sich.",
+      "Die Arme sind gestreckt, das Band ist leicht gespannt."
+    ],
+    "execution": [
+      "Ziehen Sie das Theraband auseinander, indem Sie den einen Arm seitlich öffnen.",
+      "Der andere Arm bleibt gestreckt in der Ausgangsposition."
+    ],
+    "endPosition": [
+      "Der Arm kehrt kontrolliert in die Ausgangsposition zurück, das Theraband bleibt leicht gespannt."
+    ],
+    "repetitions": "2–3 Sätze à 10–15 Wiederholungen pro Seite.",
+    "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung kontrolliert ausgeführt wird.",
+    "image": "BandSchulter.svg"
+  },
+  {
+    "title": "Theraband Innendreher",
+    "category": ["Shoulder","Arms"],
+    "startingPosition": [
+      "Befestigen Sie das Theraband auf Bauchnabelhöhe.",
+      "Stehen Sie seitlich zum Theraband, der Oberarm liegt fest am Körper an, der Unterarm ist im rechten Winkel nach vorne angewinkelt.",
+      "Halten Sie das Theraband mit der Hand des dem Theraband zugewandten Arms, die Schulterblätter sind am Brustkorb stabilisiert."
+    ],
+    "execution": [
+      "Drehen Sie den Unterarm gegen den Widerstand des Therabands nach innen, ohne dass sich die Position des Oberarms verändert.",
+      "Achten Sie darauf, dass die Schulter nicht Richtung Ohr hochgezogen wird und der Rücken gerade bleibt.",
+      "Kehren Sie kontrolliert in die Ausgangsposition zurück."
+    ],
+    "endPosition": [
+      "Der Unterarm kehrt in die Ausgangsposition zurück, das Theraband bleibt unter Spannung."
+    ],
+    "repetitions": "10 Wiederholungen pro Seite, 3 Sätze à 10 Wiederholungen",
+    "note": "Halten Sie die Spannung des Therabands während der gesamten Übung aufrecht. Vermeiden Sie ein Hohlkreuz und achten Sie darauf, dass die Schulterblätter stabil bleiben.",
+    "image": "BandSchulterInnenDreher.svg"
+  },
+  {
+    "title": "Theraband Außendreher",
+    "category": ["Shoulder","Arms"],
+    "startingPosition": [
+      "Befestigen Sie das Theraband auf Bauchnabelhöhe.",
+      "Stehen Sie seitlich zum Theraband, der Oberarm liegt fest am Körper an, der Unterarm ist im rechten Winkel nach vorne angewinkelt.",
+      "Halten Sie das Theraband mit der Hand des gegenüberliegenden Arms, die Schulterblätter sind am Brustkorb stabilisiert."
+    ],
+    "execution": [
+      "Bewegen Sie den Unterarm gegen den Widerstand des Therabands nach außen, ohne dass sich die Position des Oberarms verändert.",
+      "Achten Sie darauf, dass die Schulter nicht Richtung Ohr hochgezogen wird und der Rücken gerade bleibt.",
+      "Kehren Sie kontrolliert in die Ausgangsposition zurück."
+    ],
+    "endPosition": [
+      "Der Unterarm kehrt in die Ausgangsposition zurück, das Theraband bleibt unter Spannung."
+    ],
+    "repetitions": "10 Wiederholungen pro Seite, 3 Sätze à 10 Wiederholungen",
+    "note": "Halten Sie die Spannung des Therabands während der gesamten Übung aufrecht. Vermeiden Sie ein Hohlkreuz und achten Sie darauf, dass die Schulterblätter stabil bleiben.",
+    "image": "BandSchulterAussenDreher.svg"
+  },
+  {
+    "title": "Theraband Dehnung Schulter",
+    "category": ["Shoulder", "Arms"],
+    "startingPosition": [
+      "Stehen Sie aufrecht und halten Sie ein Ende des Therabands mit einer Hand fest.",
+      "Führen Sie diese Hand hinter den Kopf, sodass die Hand im Nacken liegt und der Ellenbogen nach oben zeigt.",
+      "Die andere Hand wird auf den Rücken gelegt und greift das lose Ende des Therabands."
+    ],
+    "execution": [
+      "Ziehen Sie mit der Hand im Nacken das Theraband nach oben, sodass die Hand auf dem Rücken Richtung Schulterblätter gezogen wird.",
+      "Halten Sie die Spannung für etwa 20 Sekunden.",
+      "Bringen Sie den ausgestreckten Arm wieder in die Ausgangsposition im Nacken zurück.",
+      "Nun ziehen Sie mit der Hand auf dem Rücken das Theraband nach unten, sodass die Spannung in der Schulter des oberen Arms entsteht.",
+      "Halten Sie die Spannung für weitere 20 Sekunden."
+    ],
+    "endPosition": [
+      "Beide Hände kehren in ihre Ausgangspositionen zurück, das Theraband bleibt leicht gespannt."
+    ],
+    "repetitions": "20 Sekunden Spannung in jeder Position (oben und unten), dann Seitenwechsel",
+    "note": "Achten Sie darauf, dass der Rücken gerade bleibt und Sie tief und gleichmäßig atmen. Die Spannung sollte angenehm, aber spürbar sein, ohne Schmerzen zu verursachen.",
+    "image": "PlaceholderPhysioApp.svg"
+  },
+  {
+    "title": "Kreuzheben mit Theraband",
+    "category": ["Back","Arms"],
+    "startingPosition": [
+      "Stellen Sie sich hüftbreit auf die Mitte des Therabands, sodass es unter den Füßen fixiert ist.",
+      "Greifen Sie die Enden des Therabands mit beiden Händen und halten Sie es so, dass eine leichte Spannung entsteht, wenn Sie aufrecht stehen.",
+      "Halten Sie den Rücken gerade, die Schultern leicht nach hinten gezogen und die Knie leicht gebeugt. Ihr Blick ist nach vorne gerichtet."
+    ],
+    "execution": [
+      "Beginnen Sie die Bewegung, indem Sie die Hüften nach hinten schieben, während Sie den Oberkörper mit geradem Rücken nach vorne beugen.",
+      "Senken Sie den Oberkörper ab, bis Ihre Hände knapp unterhalb der Knie oder in etwa auf Schienbeinhöhe sind.",
+      "Achten Sie darauf, dass Ihre Knie nicht weiter nach vorne schieben, sondern in einer leicht gebeugten Position bleiben.",
+      "Führen Sie das Band beim Aufrichten wieder nach oben, indem Sie die Hüften nach vorne schieben und den Oberkörper aufrichten.",
+      "Spannen Sie dabei Gesäß und Oberschenkelmuskulatur an, bis Sie wieder in der aufrechten Position sind."
+    ],
+    "endPosition": [
+      "Sie stehen aufrecht, das Theraband ist gespannt, der Rücken ist gerade, und die Schultern sind zurückgezogen."
+    ],
+    "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
+    "note": "Achten Sie darauf, dass der Rücken während der gesamten Übung gerade bleibt, um Verletzungen zu vermeiden. Die Bewegung sollte primär aus der Hüfte kommen.",
+    "image": "PlaceholderPhysioApp.svg"
+  },
+  {
+    "title": "Kreuzheben mit Kettlebell (Deadlift)",
+    "category": ["Back","Arms"],
+    "startingPosition": [
+      "Stellen Sie sich hüftbreit hin, die Kettlebell steht vor Ihnen auf dem Boden.",
+      "Beugen Sie die Knie leicht und greifen Sie die Kettlebell mit beiden Händen, die Arme sind gestreckt."
+    ],
+    "execution": [
+      "Heben Sie die Kettlebell, indem Sie sich aus den Hüften aufrichten und den Rücken gerade halten.",
+      "Die Bewegung erfolgt durch das Strecken der Hüfte und der Knie, wobei der Rücken stabil bleibt.",
+      "Halten Sie die Schultern nach hinten gezogen und den Brustkorb aufrecht."
+    ],
+    "endPosition": [
+      "In der Endposition stehen Sie aufrecht, die Kettlebell hängt locker in den gestreckten Armen.",
+      "Senken Sie die Kettlebell kontrolliert ab, indem Sie die Hüften nach hinten schieben und den Oberkörper nach vorne neigen, bis die Kettlebell den Boden berührt."
+    ],
+    "repetitions": "2-3 Sätze mit 10-15 Wiederholungen",
+    "note": [
+      "Achten Sie darauf, dass der Rücken während der gesamten Übung gerade bleibt, um Verletzungen zu vermeiden.",
+      "Die Bewegung sollte primär aus der Hüfte kommen, nicht aus dem unteren Rücken."
+    ],
+    "image": "PlaceholderPhysioApp.svg"
+  },
+  {
+    "title": "Zweiarmiges Rudern mit Theraband",
+    "category": ["Arms","Back"],
+    "startingPosition": [
+      "Stellen Sie sich hüftbreit auf die Mitte des Therabands.",
+      "Greifen Sie die Enden des Therabands kurz, sodass Spannung auf dem Band ist.",
+      "Beugen Sie sich mit geradem Rücken leicht nach vorne, während Ihre Knie leicht gebeugt bleiben.",
+      "Halten Sie den Kopf in Verlängerung der Wirbelsäule, der Blick ist leicht nach vorne unten gerichtet."
+    ],
+    "execution": [
+      "Ziehen Sie die Ellbogen eng am Körper nach oben und hinten, als ob Sie eine Ruderbewegung ausführen.",
+      "Achten Sie darauf, dass die Schultern nach unten gezogen bleiben und sich nicht zu den Ohren hochziehen.",
+      "Halten Sie den Rücken stabil und vermeiden Sie ein Hohlkreuz.",
+      "Führen Sie die Bewegung kontrolliert aus und kehren Sie langsam in die Ausgangsposition zurück."
+    ],
+    "endPosition": [
+      "Die Ellbogen sind nach hinten gezogen, die Schulterblätter zusammengeführt.",
+      "Der Rücken bleibt stabil und gerade."
+    ],
+    "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
+    "note": [
+      "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken.",
+      "Die Spannung des Therabands sollte während der gesamten Bewegung aufrechterhalten werden."
+    ],
+    "image": "PlaceholderPhysioApp.svg"
+  },
+  {
+    "title": "Zweiarmiges Rudern mit Kurzhanteln",
+    "category": ["Arms","Back"],
+    "startingPosition": [
+      "Stellen Sie sich hüftbreit hin, die Knie sind leicht gebeugt.",
+      "Halten Sie in jeder Hand eine Kurzhantel, die Handflächen zeigen zueinander (neutraler Griff).",
+      "Beugen Sie den Oberkörper leicht nach vorne, sodass er fast parallel zum Boden ist, der Rücken bleibt gerade."
+    ],
+    "execution": [
+      "Ziehen Sie beide Kurzhanteln gleichzeitig in einer kontrollierten Bewegung nach oben, indem Sie die Ellbogen nahe am Körper nach hinten führen.",
+      "Die Schultern werden nach hinten zusammengezogen, um die Schulterblätter zu aktivieren."
+    ],
+    "endPosition": [
+      "Die Ellbogen sollten auf Höhe des Rumpfes oder leicht darüber enden.",
+      "Senken Sie die Hanteln langsam und kontrolliert wieder in die Ausgangsposition ab."
+    ],
+    "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
+    "note": [
+      "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken."
+    ],
+    "image": "PlaceholderPhysioApp.svg"
+  }
+]
