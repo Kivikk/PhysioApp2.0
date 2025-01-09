@@ -3,19 +3,19 @@ import Card from "../models/Card.js";
 
 // Get all cards
 export const getAllCards = async (req, res) => {
+  console.log('GET /api/cards request received');
   try {
-    console.log('Fetching cards...');
+    console.log('Starting database query...');
     const cards = await Card.find().sort({ createdAt: -1 });
-    console.log(`Found ${cards.length} cards`);
-    console.log('First card:', cards[0]?.title);
-    console.log('Last card:', cards[cards.length - 1]?.title);
+    console.log('Query completed');
+    console.log(`Found ${cards.length} cards in total`);
+    console.log('Response data:', JSON.stringify(cards, null, 2));
     res.status(200).json(cards);
   } catch (error) {
-    console.error('Error in getAllCards:', error);
+    console.error('Database error:', error);
     res.status(500).json({ message: error.message });
   }
 };
-
 
 // Get single card by id
 export const getCardById = async (req, res) => {
