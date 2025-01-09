@@ -6,6 +6,8 @@ const API_URLS = {
   production: 'https://https://physioapp2-0backend.onrender.com',  // Updated with production URL
 };
 
+console.log('Current API URL:', import.meta.env.MODE, API_URLS[import.meta.env.MODE]);
+
 const config = {
   baseURL: API_URLS[process.env.NODE_ENV] || API_URLS.development,
   headers: {
