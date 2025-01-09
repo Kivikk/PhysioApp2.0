@@ -50,7 +50,7 @@ const WorkoutPlans = () => {
         {workoutPlans.map((plan) => (
           <div
             key={plan.id}
-            className="relative group bg-physio-cream rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+            className="relative group bg-physio-cream rounded-lg shadow-md p-4 cursor-pointer hover:brightness-75"
             onClick={() => handlePlanClick(plan.id)}
           >
             <div className="relative z-10">
@@ -76,7 +76,7 @@ const WorkoutPlans = () => {
               </div>
             </div>
             <div className="absolute inset-0 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="bg-white/40 rounded-full p-2">
+              <div className="bg-white rounded-full p-2 z-20">
                 <ChevronRight className="w-6 h-6 text-physio-chocolate" />
               </div>
             </div>

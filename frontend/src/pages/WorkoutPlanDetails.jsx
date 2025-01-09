@@ -97,12 +97,12 @@ const WorkoutPlanDetails = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="bg-physio-cream rounded-lg shadow-md overflow-hidden">
           <div className={`relative h-96 ${categoryColorMap[exercise.category[0]] || defaultCategoryColor}`}>
             <img
               src={images[exercise.image]}
               alt={exercise.title}
-              className="w-full h-full object-contain scale-150"
+              className="w-full h-full object-contain scale-175 "
               onError={(e) => {
                 e.target.src = images['PlaceholderPhysioApp.svg'];
               }}
@@ -114,7 +114,7 @@ const WorkoutPlanDetails = () => {
               {exercise.category.map((cat, index) => (
                 <span
                   key={index}
-                  className="text-sm px-2 py-1 rounded bg-physio-cream/40 text-physio-chocolate"
+                  className="text-sm px-2 py-1 rounded bg-white/40 text-physio-chocolate"
                 >
                   {cat}
                 </span>
@@ -173,15 +173,15 @@ const WorkoutPlanDetails = () => {
         <div className="flex justify-between mt-6">
           <button
             onClick={() => handleNavigation('prev')}
-            className="p-2 rounded-full bg-physio-cream/40 text-physio-chocolate hover:bg-physio-cream"
+            className="p-2 rounded-full bg-white/40 text-physio-chocolate hover:bg-physio-cream"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => handleNavigation('next')}
-            className="p-2 rounded-full bg-physio-cream/40 text-physio-chocolate hover:bg-physio-cream"
+            className="p-2 rounded-full bg-white/40 text-physio-chocolate hover:bg-physio-cream"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-6 h-6  text-physio-chocolate" />
           </button>
         </div>
       </div>

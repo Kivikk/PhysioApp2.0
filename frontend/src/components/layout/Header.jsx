@@ -45,7 +45,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-6">
             <button
               onClick={() => navigate('/favorites')}
-              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative"
+              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative group"
               aria-label="Favoriten"
             >
               <Heart className="h-5 w-5 text-physio-cream" />
@@ -54,19 +54,31 @@ const Header = () => {
                   {favoriteCount}
                 </span>
               )}
+              <span className="absolute top-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm text-physio-cream">
+                Favoriten
+              </span>
             </button>
 
             <button
               onClick={() => navigate('/login')}
-              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 flex items-center gap-2"
+              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative group"
+              aria-label="Login"
             >
               <LogIn className="h-5 w-5 text-physio-cream" />
-              <span>Login</span>
+              <span className="absolute top-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm text-physio-cream">
+                Login
+              </span>
             </button>
 
-            <button className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 flex items-center gap-2">
+            <button
+              onClick={() => navigate('/profile')}
+              className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative group"
+              aria-label="Profil"
+            >
               <User className="h-5 w-5 text-physio-cream" />
-              <span>Profil</span>
+              <span className="absolute top-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm text-physio-cream">
+                Profil
+              </span>
             </button>
           </div>
 

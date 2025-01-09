@@ -87,13 +87,13 @@ const WorkoutPlanPage = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="space-y-4">
+      <div className="container mx-auto px-4  ">
+        <div className="space-y-4 ">
           {exercises.map((exercise) => (
             <div
               key={exercise._id}
               onClick={() => handleExerciseClick(exercise)}
-              className="group bg-physio-cream rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+              className="group bg-physio-cream rounded-lg shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:brightness-95"
             >
               <div className="flex items-center p-4">
                 <div className={`w-32 h-32 rounded overflow-hidden ${categoryColorMap[exercise.category[0]] || defaultCategoryColor}`}>
@@ -115,7 +115,7 @@ const WorkoutPlanPage = () => {
                     {exercise.category.map((cat, index) => (
                       <span
                         key={`${exercise._id}-${cat}-${index}`}
-                        className="text-sm px-2 py-1 rounded bg-physio-cream/40 text-physio-chocolate"
+                        className="text-sm px-2 py-1 rounded bg-white/40 text-physio-chocolate"
                       >
                         {cat}
                       </span>
@@ -124,7 +124,7 @@ const WorkoutPlanPage = () => {
                 </div>
 
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="bg-physio-cream/40 rounded-full p-2">
+                  <div className="bg-white/40 rounded-full p-2">
                     <ChevronRight className="w-6 h-6 text-physio-chocolate" />
                   </div>
                 </div>

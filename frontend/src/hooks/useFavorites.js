@@ -241,7 +241,7 @@ export const useFavorites = () => {
 
 
   const getFavoriteExercises = useCallback(async () => {
-    // Erstelle eine Map für Request-Tracking
+    // Map für Request-Tracking
     const requestMap = new Map();
     const favoriteIds = Object.keys(favorites);
 
