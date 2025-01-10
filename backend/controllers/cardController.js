@@ -3,31 +3,14 @@ import Card from "../models/Card.js";
 
 // Get all cards
 export const getAllCards = async (req, res) => {
-  console.log('GET /api/cards request received');
   try {
-    console.log('Starting database query...');
-    // Zunächst zählen wir alle Dokumente
-    const count = await Card.countDocuments();
-    console.log(`Total documents in collection: ${count}`);
-
-    // Dann führen wir die normale Query aus
     const cards = await Card.find()
       .sort({ createdAt: -1 })
       .lean() // für bessere Performance
       .exec();
 
-    console.log('Query completed');
-    console.log(`Found ${cards.length} cards in total`);
-    console.log('First card title:', cards[0]?.title);
-    console.log('Collection stats:', JSON.stringify({
-      totalCount: count,
-      returnedCount: cards.length,
-      hasMore: count > cards.length
-    }));
-
     res.status(200).json(cards);
   } catch (error) {
-    console.error('Database error:', error);
     res.status(500).json({ message: error.message });
   }
 };
