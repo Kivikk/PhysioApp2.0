@@ -14,8 +14,8 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'frontend',
-      short_name: 'frontend',
+      name: 'PhysioApp',
+      short_name: 'PhysioApp',
       description: 'PhysioApp - Your digital physiotherapy exercise companion with offline support',
       theme_color: '#ffffff',
     },
