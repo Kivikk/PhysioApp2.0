@@ -7,9 +7,6 @@ const API_URLS = {
 };
 
 const mode = import.meta.env.MODE;
-console.log('Environment Mode:', mode);
-console.log('Available URLs:', API_URLS);
-console.log('Selected URL:', API_URLS[mode]);
 
 export const BASE_URL = API_URLS[mode];
 
