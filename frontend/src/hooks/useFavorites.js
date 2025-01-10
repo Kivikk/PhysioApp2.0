@@ -241,32 +241,48 @@ export const useFavorites = () => {
 
 
   const getFavoriteExercises = useCallback(async () => {
-    // Map für Request-Tracking
-    const requestMap = new Map();
-    const favoriteIds = Object.keys(favorites);
+    if (navigator.onLine) {
+      const requestMap = new Map();
+      const favoriteIds = Object.keys(favorites);
 
-    try {
-      // Verarbeite jede ID nur einmal
-      for (const id of favoriteIds) {
-        if (!requestMap.has(id)) {
-          const result = await getExerciseById(id);
-          if (result.success) {
-            requestMap.set(id, result.data);
+      try {
+        for (const id of favoriteIds) {
+          if (!requestMap.has(id)) {
+            const result = await getExerciseById(id);
+            if (result.success) {
+              const exerciseData = result.data;
+              const exerciseWithDetails = {
+                _id: id,
+                title: exerciseData.title,
+                image: exerciseData.image,
+                category: exerciseData.category,
+                startingPosition: exerciseData.startingPosition || [],
+                execution: exerciseData.execution || [],
+                endPosition: exerciseData.endPosition || [],
+                repetitions: exerciseData.repetitions || '',
+                note: exerciseData.note || ''
+              };
+
+              const currentFavorites = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+              currentFavorites[id] = exerciseWithDetails;
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(currentFavorites));
+
+              requestMap.set(id, exerciseWithDetails);
+            }
           }
         }
+        return Array.from(requestMap.values());
+      } catch (error) {
+        return [];
       }
-
-      // Konvertiere Map zu Array
-      return Array.from(requestMap.values());
-    } catch (error) {
-      console.error('Error fetching favorites:', error);
-      return [];
     }
+    return Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'));
   }, [favorites]);
 
   const getFavoriteCount = useCallback(() => {
     return Object.keys(favorites).length;
   }, [favorites]);
+
 
   return {
     favorites,
