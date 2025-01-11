@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Loader, ChevronLeft, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { workoutPlans } from '../components/sections/WorkoutPlans';
+import { workoutPlans } from '../data/workoutPlansData';
 import { getAllExercises } from '../services/api';
 import CloseHeader from '../components/navigation/CloseHeader';
 import { images } from '../utils/imageImports';
@@ -32,7 +32,7 @@ const WorkoutPlanDetails = () => {
     fetchAllExercises();
   }, []);
 
-  // Finde dann die spezifische Übung
+  // Finde spezifische Übung
   useEffect(() => {
     if (!exerciseId || !allExercises.length) return;
 
@@ -52,7 +52,7 @@ const WorkoutPlanDetails = () => {
   const handleNavigation = (direction) => {
     if (!selectedPlan?.exercises || !exercise) return;
 
-    // Finde alle Übungen, die zu diesem Plan gehören
+    // Finde alle Übungen zum Plan
     const planExercises = selectedPlan.exercises.map(planExercise =>
       allExercises.find(e => e.image === planExercise.image)
     ).filter(Boolean);

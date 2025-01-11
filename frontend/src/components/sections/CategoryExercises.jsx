@@ -64,13 +64,17 @@ const CategoryExercises = () => {
     );
   }
 
-  // Gruppiere Übungen nach Kategorien
+  // Übungen nach Kategorien gruppieren
   const exercisesByCategory = exercises.reduce((acc, exercise) => {
-    exercise.category.forEach(cat => {
-      if (!acc[cat]) {
-        acc[cat] = [];
-      }
-      acc[cat].push(exercise);
+    // erste Kategorie für die Gruppierung
+    const primaryCategory = exercise.category[0];
+    if (!acc[primaryCategory]) {
+      acc[primaryCategory] = [];
+    }
+    acc[primaryCategory].push({
+      ...exercise,
+      // Anzeige aller Kategorien auf der Karte
+      allCategories: exercise.category
     });
     return acc;
   }, {});
@@ -86,7 +90,7 @@ const CategoryExercises = () => {
             <h3 className="text-xl font-medium text-physio-chocolate mb-4 text-left">
               {category}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
               {categoryExercises.map((exercise) => (
                 <CompactWorkoutCard
                   key={exercise._id}

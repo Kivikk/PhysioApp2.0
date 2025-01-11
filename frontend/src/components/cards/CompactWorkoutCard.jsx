@@ -18,10 +18,10 @@ const CompactWorkoutCard = ({ exercise, onClick = () => { } }) => {
   return (
     <div
       onClick={() => onClick(exercise)}
-      className="group bg-white rounded shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:brightness-90"
+      className="group bg-physio-cream rounded shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:brightness-90"
     >
       <div className={`relative ${backgroundColorClass} transition-all duration-200 group-hover:brightness-90`}>
-        <div className="w-full h-48">
+        <div className="w-full h-40">
           <img
             src={images[image]}
             alt="Exercise illustration"

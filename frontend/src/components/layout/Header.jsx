@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { User, Heart, LogIn } from "../../utils/icons";
 import { useFavorites } from "../../hooks/useFavorites";
 import MobileNav from "../navigation/MobileNav";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo_quadrat.svg";
 import { useToast } from '../../contexts/ToastContext';
 
 const Header = () => {

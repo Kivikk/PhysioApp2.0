@@ -18,6 +18,20 @@ export default defineConfig({
       short_name: 'PhysioApp',
       description: 'PhysioApp - Your digital physiotherapy exercise companion with offline support',
       theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'physioapp.svg',
+          sizes: '64x64 192x192 512x512',
+          type: 'image/svg+xml',
+          purpose: 'any'
+        },
+        {
+          src: 'physioapp.svg',
+          sizes: '512x512',
+          type: 'image/svg+xml',
+          purpose: 'maskable'
+        }
+      ]
     },
 
     workbox: {

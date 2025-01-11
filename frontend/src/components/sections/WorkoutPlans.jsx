@@ -4,35 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { images } from '../../utils/imageImports';
 import { ChevronRight } from 'lucide-react';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
-
-export const workoutPlans = [
-  {
-    id: '5-min-routine',
-    title: "5 Minuten Routine",
-    exercises: [
-      { image: "RueckenRolle.svg", category: ["Core"] },
-      { image: "DehnungKindhaltung.svg", category: ["Back"] },
-      { image: "Vorbeuger.svg", category: ["Back"] }
-    ]
-  },
-  {
-    id: 'after-work',
-    title: "After-Work Routine",
-    exercises: [
-      { image: "BandSchulter.svg", category: ["Shoulder"] },
-      { image: "NackenRolle.svg", category: ["Back"] }
-    ]
-  },
-  {
-    id: 'complete',
-    title: "Komplett Routine",
-    exercises: [
-      { image: "Beinheben.svg", category: ["Legs"] },
-      { image: "HueftHebung.svg", category: ["Hip"] },
-      { image: "WadenHueftDehnung.svg", category: ["Legs", "Hip"] }
-    ]
-  }
-];
+import { workoutPlans } from '../../data/workoutPlansData';
 
 const WorkoutPlans = () => {
   const navigate = useNavigate();
@@ -50,23 +22,23 @@ const WorkoutPlans = () => {
         {workoutPlans.map((plan) => (
           <div
             key={plan.id}
-            className="relative group bg-physio-cream rounded-lg shadow-md p-4 cursor-pointer hover:brightness-75"
+            className="relative group bg-physio-cream rounded-lg shadow-md p-4 cursor-pointer hover:brightness-90"
             onClick={() => handlePlanClick(plan.id)}
           >
             <div className="relative z-10">
               <h3 className="text-xl font-medium text-physio-chocolate mb-4">
                 {plan.title}
               </h3>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-4">
                 {plan.exercises.map((exercise, index) => (
                   <div
                     key={index}
-                    className={`w-full h-32 rounded overflow-hidden ${categoryColorMap[exercise.category[0]] || defaultCategoryColor}`}
+                    className={`w-full h-40 rounded overflow-hidden ${categoryColorMap[exercise.category[0]] || defaultCategoryColor}`}
                   >
                     <img
                       src={images[exercise.image]}
                       alt="Exercise preview"
-                      className="w-full h-full object-contain scale-150"
+                      className="w-full h-40 object-contain scale-150"
                       onError={(e) => {
                         e.target.src = images['PlaceholderPhysioApp.svg'];
                       }}
@@ -76,7 +48,7 @@ const WorkoutPlans = () => {
               </div>
             </div>
             <div className="absolute inset-0 flex items-center justify-end pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <div className="bg-white rounded-full p-2 z-20">
+              <div className="bg-white/80 rounded-full p-2 z-20">
                 <ChevronRight className="w-6 h-6 text-physio-chocolate" />
               </div>
             </div>
