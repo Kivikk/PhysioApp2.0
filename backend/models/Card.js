@@ -2,12 +2,12 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const EXERCISE_CATEGORIES = [
-  'Hip',
-  'Legs',
-  'Shoulders',
-  'Back',
-  'Arms',
-  'Core'
+  'Hüfte',
+  'Beine',
+  'Schultern',
+  'Rücken',
+  'Arme',
+  'Wirbelsäule'
 ];
 
 const cardSchema = new Schema({

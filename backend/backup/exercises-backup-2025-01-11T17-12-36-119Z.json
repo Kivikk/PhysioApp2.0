@@ -1,5 +1,6 @@
 [
   {
+    "_id": "677aa912040a6a0468fa01ba",
     "title": "Waden- und Hüftdehnung an der Wand",
     "category": [
       "Hüfte",
@@ -20,9 +21,13 @@
     ],
     "repetitions": "Einmal halten, dann Seite wechseln.",
     "note": "Achten Sie darauf, dass die Ferse des hinteren Beins den Boden nicht verlässt, um eine effektive Dehnung zu gewährleisten.",
-    "image": "WadenHueftDehnung.svg"
+    "image": "WadenHueftDehnung.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.618Z",
+    "updatedAt": "2025-01-11T16:37:39.773Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01bb",
     "title": "Dehnung des Standbeins",
     "category": [
       "Beine",
@@ -40,9 +45,13 @@
     ],
     "repetitions": "Einmal halten, dann Seite wechseln.",
     "note": "Achten Sie darauf, dass die Hüfte gerade bleibt und das Standbein stabil ist.",
-    "image": "DehnungStandbeins.svg"
+    "image": "DehnungStandbeins.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.618Z",
+    "updatedAt": "2025-01-11T16:37:39.801Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01bc",
     "title": "Vorbeuge mit gestrecktem Rücken",
     "category": [
       "Wirbelsäule",
@@ -60,9 +69,13 @@
     ],
     "repetitions": "Einmal halten.",
     "note": "Achten Sie darauf, dass die Dehnung aus der Hüfte kommt und der Rücken während der gesamten Bewegung gerade bleibt.",
-    "image": "Vorbeuger.svg"
+    "image": "Vorbeuger.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.825Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01bd",
     "title": "Rumpfdrehung an der Wand",
     "category": [
       "Wirbelsäule",
@@ -85,9 +98,13 @@
     ],
     "repetitions": "10 Wiederholungen, dann Seite wechseln.",
     "note": "Achten Sie darauf, dass die Hüfte und das Knie stabil bleiben und sich nicht mitdrehen, während Sie die Schulter zur Wand hin bewegen.",
-    "image": "RumpfDrehungWand.svg"
+    "image": "RumpfDrehungWand.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.848Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01be",
     "title": "Dehnung in der Kindhaltung mit Übergang in den herabschauenden Hund",
     "category": [
       "Beine",
@@ -107,13 +124,17 @@
     ],
     "repetitions": "Einmal halten.",
     "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Fersen aktiv Richtung Boden geschoben werden, um die Dehnung zu intensivieren.",
-    "image": "DehnungKindhaltung.svg"
+    "image": "DehnungKindhaltung.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.871Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01bf",
     "title": "Rumpfdrehung in Seitlage mit Rolle",
     "category": [
       "Wirbelsäule",
-      "Schultern",
+      "Shoulder",
       "Rücken"
     ],
     "startingPosition": [
@@ -131,9 +152,13 @@
     ],
     "repetitions": "10 Wiederholungen pro Seite.",
     "note": "Achten Sie darauf, dass die Hüfte und das Knie stabil bleiben und die Bewegung nur im Oberkörper stattfindet.",
-    "image": "RumpfDrehungBoden.svg"
+    "image": "RumpfDrehungBoden.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.895Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c0",
     "title": "Seitliche Hüfthebung",
     "category": [
       "Hüfte"
@@ -156,9 +181,13 @@
     ],
     "repetitions": "15 Wiederholungen, dann Seite wechseln.",
     "note": "Achten Sie darauf, dass der Körper während der Bewegung stabil und gerade bleibt, um die Muskulatur optimal zu beanspruchen. Die Spannung sollte während der gesamten Übung aufrechterhalten werden, insbesondere in der Bauch- und Hüftmuskulatur.",
-    "image": "HueftHebung.svg"
+    "image": "HueftHebung.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.918Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c1",
     "title": "Seitliche Beinhebung in Seitenlage",
     "category": [
       "Beine",
@@ -182,9 +211,13 @@
     ],
     "repetitions": "20 Wiederholungen pro Seite, dann die Seite wechseln.",
     "note": "Achten Sie darauf, dass der Körper während der gesamten Bewegung stabil und in einer Linie bleibt.",
-    "image": "Beinheben.svg"
+    "image": "Beinheben.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.940Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c2",
     "title": "Diagonale Bauchmuskulatur",
     "category": [
       "Rücken"
@@ -202,9 +235,13 @@
     ],
     "repetitions": "Insgesamt ca. 180 Mal, 90 Mal pro Seite.",
     "note": "Achten Sie darauf, dass die Bewegung kontrolliert und gleichmäßig ausgeführt wird, um die diagonalen Bauchmuskeln effektiv zu trainieren.",
-    "image": "PlaceholderPhysioApp.svg"
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.964Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c3",
     "title": "Nackenmobilisation mit Rolle",
     "category": [
       "Wirbelsäule"
@@ -221,9 +258,13 @@
     ],
     "repetitions": "Führen Sie die Bewegung 15 Mal pro Seite durch.",
     "note": "Achten Sie auf eine gleichmäßige, langsame Bewegung, um Verspannungen im Nacken zu lösen.",
-    "image": "NackenRolle.svg"
+    "image": "NackenRolle.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:39.988Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c4",
     "title": "Rückenmobilisation mit Rolle",
     "category": [
       "Rücken",
@@ -242,14 +283,18 @@
     ],
     "repetitions": "Wiederholen Sie den Vorgang 3 Mal pro Wirbelbereich bis zu den Schulterblättern und dann zurück.",
     "note": "Achten Sie darauf, dass der Po und die Beine während der gesamten Übung in ihrer Position bleiben.",
-    "image": "RueckenRolle.svg"
+    "image": "RueckenRolle.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.014Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c5",
     "title": "Stabrotation im Sitzen",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Rücken",
-      "core"
+      "Wirbelsäule"
     ],
     "startingPosition": [
       "Setzen Sie sich auf die Vorderkante eines stabilen Stuhls, sodass die Füße fest auf dem Boden stehen.",
@@ -264,9 +309,13 @@
     ],
     "repetitions": "10 Wiederholungen pro Seite, insgesamt 3 Sätze.",
     "note": "Halten Sie den Rücken gerade und vermeiden Sie ein Hohlkreuz.",
-    "image": "Stabrotation.svg"
+    "image": "Stabrotation.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.042Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c6",
     "title": "Oberschenkelmuskel dehnen",
     "category": [
       "Beine"
@@ -284,12 +333,16 @@
     ],
     "repetitions": "Halten Sie die Dehnung für 30 Sekunden bis 1 Minute pro Seite.",
     "note": "Achten Sie darauf, die Dehnung langsam und kontrolliert durchzuführen.",
-    "image": "OberschenkelDehnung.svg"
+    "image": "OberschenkelDehnung.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.068Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c7",
     "title": "Theraband Seitliche Schultermuskulatur",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -305,12 +358,16 @@
     ],
     "repetitions": "2–3 Sätze à 10–15 Wiederholungen pro Seite.",
     "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung kontrolliert ausgeführt wird.",
-    "image": "BandSchulter.svg"
+    "image": "BandSchulter.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.097Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c8",
     "title": "Theraband Innendreher",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -328,12 +385,16 @@
     ],
     "repetitions": "10 Wiederholungen pro Seite, 3 Sätze à 10 Wiederholungen",
     "note": "Halten Sie die Spannung des Therabands während der gesamten Übung aufrecht. Vermeiden Sie ein Hohlkreuz und achten Sie darauf, dass die Schulterblätter stabil bleiben.",
-    "image": "BandSchulterInnenDreher.svg"
+    "image": "BandSchulterInnenDreher.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.122Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01c9",
     "title": "Theraband Außendreher",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -351,12 +412,16 @@
     ],
     "repetitions": "10 Wiederholungen pro Seite, 3 Sätze à 10 Wiederholungen",
     "note": "Halten Sie die Spannung des Therabands während der gesamten Übung aufrecht. Vermeiden Sie ein Hohlkreuz und achten Sie darauf, dass die Schulterblätter stabil bleiben.",
-    "image": "BandSchulterAussenDreher.svg"
+    "image": "BandSchulterAussenDreher.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.619Z",
+    "updatedAt": "2025-01-11T16:37:40.149Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01ca",
     "title": "Theraband Dehnung Schulter",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -376,9 +441,13 @@
     ],
     "repetitions": "20 Sekunden Spannung in jeder Position (oben und unten), dann Seitenwechsel",
     "note": "Achten Sie darauf, dass der Rücken gerade bleibt und Sie tief und gleichmäßig atmen. Die Spannung sollte angenehm, aber spürbar sein, ohne Schmerzen zu verursachen.",
-    "image": "PlaceholderPhysioApp.svg"
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.620Z",
+    "updatedAt": "2025-01-11T16:37:40.176Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01cb",
     "title": "Kreuzheben mit Theraband",
     "category": [
       "Rücken",
@@ -401,9 +470,13 @@
     ],
     "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
     "note": "Achten Sie darauf, dass der Rücken während der gesamten Übung gerade bleibt, um Verletzungen zu vermeiden. Die Bewegung sollte primär aus der Hüfte kommen.",
-    "image": "PlaceholderPhysioApp.svg"
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.620Z",
+    "updatedAt": "2025-01-11T16:37:40.200Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01cc",
     "title": "Kreuzheben mit Kettlebell (Deadlift)",
     "category": [
       "Rücken",
@@ -423,13 +496,14 @@
       "Senken Sie die Kettlebell kontrolliert ab, indem Sie die Hüften nach hinten schieben und den Oberkörper nach vorne neigen, bis die Kettlebell den Boden berührt."
     ],
     "repetitions": "2-3 Sätze mit 10-15 Wiederholungen",
-    "note": [
-      "Achten Sie darauf, dass der Rücken während der gesamten Übung gerade bleibt, um Verletzungen zu vermeiden.",
-      "Die Bewegung sollte primär aus der Hüfte kommen, nicht aus dem unteren Rücken."
-    ],
-    "image": "PlaceholderPhysioApp.svg"
+    "note": "Achten Sie darauf, dass der Rücken während der gesamten Übung gerade bleibt, um Verletzungen zu vermeiden. Die Bewegung sollte primär aus der Hüfte kommen, nicht aus dem unteren Rücken.",
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.620Z",
+    "updatedAt": "2025-01-11T16:37:40.225Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01cd",
     "title": "Zweiarmiges Rudern mit Theraband",
     "category": [
       "Arme",
@@ -452,13 +526,14 @@
       "Der Rücken bleibt stabil und gerade."
     ],
     "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
-    "note": [
-      "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken.",
-      "Die Spannung des Therabands sollte während der gesamten Bewegung aufrechterhalten werden."
-    ],
-    "image": "PlaceholderPhysioApp.svg"
+    "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken. Die Spannung des Therabands sollte während der gesamten Bewegung aufrechterhalten werden.",
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.620Z",
+    "updatedAt": "2025-01-11T16:37:40.251Z"
   },
   {
+    "_id": "677aa912040a6a0468fa01ce",
     "title": "Zweiarmiges Rudern mit Kurzhanteln",
     "category": [
       "Arme",
@@ -478,9 +553,10 @@
       "Senken Sie die Hanteln langsam und kontrolliert wieder in die Ausgangsposition ab."
     ],
     "repetitions": "2-3 Sätze mit jeweils 10-15 Wiederholungen",
-    "note": [
-      "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken."
-    ],
-    "image": "PlaceholderPhysioApp.svg"
+    "note": "Achten Sie darauf, dass der Rücken gerade bleibt und die Bewegung aus den Armen und Schultern erfolgt, nicht aus dem Rücken.",
+    "image": "PlaceholderPhysioApp.svg",
+    "__v": 1,
+    "createdAt": "2025-01-05T15:45:22.620Z",
+    "updatedAt": "2025-01-11T16:37:40.275Z"
   }
 ]
