@@ -69,7 +69,7 @@ const ExerciseModal = ({
             <img
               src={images[image]}
               alt={title}
-              className="w-full h-full object-contain scale-150"
+              className="w-full h-full object-contain scale-200"
             />
           </div>
           <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">

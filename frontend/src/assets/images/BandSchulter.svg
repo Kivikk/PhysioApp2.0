@@ -18,7 +18,7 @@
             <circle cx="-23.5" cy="0" r="23.5" style="fill:none;stroke:rgb(29,29,27);stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,127.743,554.794)">
-            <path d="M0,0L369.989,0" style="fill:none;fill-rule:nonzero;stroke:rgb(29,29,27);stroke-width:1px;"/>
+            <path d="M0,0L369.989,0" style="fill:none;fill-rule:nonzero;stroke:rgb(29,29,27);stroke-width:2.83px;"/>
         </g>
         <g transform="matrix(1,0,0,1,205.772,309.34)">
             <path d="M0,0L18,0" style="fill:none;fill-rule:nonzero;stroke:rgb(29,29,27);stroke-width:2.27px;stroke-linecap:round;"/>
