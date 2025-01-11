@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 2481 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-    <g id="PlaceholderPhysioApp">
+    <g id="PlaceholderPhysioApp" transform="matrix(1,0,0,1,-41,0)">
         <g transform="matrix(0,4.16667,4.16667,0,1554.47,1294.82)">
             <path d="M26.057,-26.057C67.867,-26.057 101.761,-14.391 101.761,-0C101.761,14.39 67.867,26.057 26.057,26.057C-15.753,26.057 -49.648,14.39 -49.648,-0C-49.648,-14.391 -15.753,-26.057 26.057,-26.057" style="fill:white;fill-rule:nonzero;"/>
         </g>

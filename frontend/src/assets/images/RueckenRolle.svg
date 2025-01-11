@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 2481 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:10;">
-    <g id="RueckenRolle" transform="matrix(4.16667,0,0,4.16667,0,0)">
+    <g id="RueckenRolle" transform="matrix(4.16667,0,0,4.16667,192,27)">
         <g transform="matrix(-0.425377,-0.905016,-0.905016,0.425377,188.556,495.852)">
             <path d="M-32.336,20.531L13.036,20.531" style="fill:none;fill-rule:nonzero;stroke:rgb(29,29,27);stroke-width:1px;"/>
         </g>
@@ -111,7 +111,7 @@
             <path d="M-5.933,-4.424C-9.352,-4.424 -12.123,-1.652 -12.123,1.766C-12.123,5.185 -9.352,7.956 -5.933,7.957C-2.515,7.956 0.257,5.185 0.257,1.766C0.257,-1.652 -2.514,-4.423 -5.933,-4.424" style="fill:rgb(218,218,218);fill-rule:nonzero;"/>
         </g>
         <g transform="matrix(0.285361,-0.95842,-0.95842,-0.285361,257.036,412.381)">
-            <ellipse cx="-5.933" cy="1.767" rx="6.19" ry="6.19" style="fill:none;stroke:rgb(29,29,27);stroke-width:1px;stroke-linecap:butt;"/>
+            <circle cx="-5.933" cy="1.767" r="6.19" style="fill:none;stroke:rgb(29,29,27);stroke-width:1px;stroke-linecap:butt;"/>
         </g>
         <g transform="matrix(1,0.00071901,0.00071901,-1,252.494,418.781)">
             <path d="M0.003,-0C1.29,-1.933 2.334,-1.944 2.335,-0.024C2.334,1.897 1.291,5.02 0.003,6.954C-1.285,8.887 -2.329,8.898 -2.329,6.977C-2.329,5.057 -1.285,1.933 0.003,-0" style="fill:white;fill-rule:nonzero;"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 2481 3508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:10;">
-    <g id="OberschenkelDehnung" transform="matrix(4.16667,0,0,4.16667,0,0)">
+    <g id="OberschenkelDehnung" transform="matrix(4.16667,0,0,4.16667,71,19)">
         <g transform="matrix(0.0739896,0.997259,0.997259,-0.0739896,327.508,359.007)">
             <path d="M-57.571,-62.001L66.771,-62.001" style="fill:none;fill-rule:nonzero;stroke:rgb(29,29,27);stroke-width:1px;"/>
         </g>
