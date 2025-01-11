@@ -2,8 +2,8 @@
   {
     "title": "Waden- und Hüftdehnung an der Wand",
     "category": [
-      "Hüfte",
-      "Beine"
+      "Hip",
+      "Legs"
     ],
     "startingPosition": [
       "Stellen Sie sich mit dem Gesicht zur Wand.",
@@ -25,8 +25,8 @@
   {
     "title": "Dehnung des Standbeins",
     "category": [
-      "Beine",
-      "Hüfte"
+      "Legs",
+      "Hip"
     ],
     "startingPosition": [
       "Stellen Sie sich gerade vor einen Tisch, in einem Abstand, der es ermöglicht, Spannung aufzubauen, wenn ein Fuß auf die Tischplatte gestellt wird."
@@ -45,8 +45,8 @@
   {
     "title": "Vorbeuge mit gestrecktem Rücken",
     "category": [
-      "Wirbelsäule",
-      "Hüfte"
+      "Core",
+      "Hip"
     ],
     "startingPosition": [
       "Stellen Sie die Füße hüftbreit auf, der Körper ist aufrecht, die Arme hängen locker seitlich herunter."
@@ -65,8 +65,8 @@
   {
     "title": "Rumpfdrehung an der Wand",
     "category": [
-      "Wirbelsäule",
-      "Rücken"
+      "Core",
+      "Back"
     ],
     "startingPosition": [
       "Knien Sie sich seitlich zur Wand, sodass das Bein, das der Wand zugewandt ist, mit dem Knie auf dem Boden ruht.",
@@ -90,9 +90,9 @@
   {
     "title": "Dehnung in der Kindhaltung mit Übergang in den herabschauenden Hund",
     "category": [
-      "Beine",
-      "Hüfte",
-      "Rücken"
+      "Legs",
+      "Hip",
+      "Back"
     ],
     "startingPosition": [
       "Beginnen Sie in der Kindhaltung auf einer Matte, die Knie leicht geöffnet, der Oberkörper ruht auf den Oberschenkeln.",
@@ -112,9 +112,9 @@
   {
     "title": "Rumpfdrehung in Seitlage mit Rolle",
     "category": [
-      "Wirbelsäule",
-      "Schultern",
-      "Rücken"
+      "Core",
+      "Shoulder",
+      "Back"
     ],
     "startingPosition": [
       "Legen Sie sich auf die rechte Körperseite in eine stabile Ausgangslage.",
@@ -136,7 +136,7 @@
   {
     "title": "Seitliche Hüfthebung",
     "category": [
-      "Hüfte"
+      "Hip"
     ],
     "startingPosition": [
       "Legen Sie sich seitlich auf eine Matte, der Oberkörper ist angehoben und stützt sich auf den unten liegenden Ellbogen, der direkt unter der Schulter platziert ist.",
@@ -161,8 +161,8 @@
   {
     "title": "Seitliche Beinhebung in Seitenlage",
     "category": [
-      "Beine",
-      "Hüfte"
+      "Legs",
+      "Hip"
     ],
     "startingPosition": [
       "Legen Sie sich seitlich auf eine Matte.",
@@ -187,7 +187,7 @@
   {
     "title": "Diagonale Bauchmuskulatur",
     "category": [
-      "Rücken"
+      "Back"
     ],
     "startingPosition": [
       "Legen Sie sich flach mit dem Rücken auf eine Matte, beide Arme seitlich ausgestreckt.",
@@ -207,7 +207,7 @@
   {
     "title": "Nackenmobilisation mit Rolle",
     "category": [
-      "Wirbelsäule"
+      "Core"
     ],
     "startingPosition": [
       "Legen Sie sich mit leicht angewinkelten Beinen flach auf den Rücken auf eine Matte.",
@@ -226,8 +226,8 @@
   {
     "title": "Rückenmobilisation mit Rolle",
     "category": [
-      "Rücken",
-      "Wirbelsäule"
+      "Back",
+      "Core"
     ],
     "startingPosition": [
       "Setzen Sie sich mit ausgestreckten Beinen auf den Boden und winkeln Sie die Beine ca. 90° an.",
@@ -247,8 +247,8 @@
   {
     "title": "Stabrotation im Sitzen",
     "category": [
-      "Schultern",
-      "Rücken",
+      "Shoulder",
+      "Back",
       "core"
     ],
     "startingPosition": [
@@ -269,7 +269,7 @@
   {
     "title": "Oberschenkelmuskel dehnen",
     "category": [
-      "Beine"
+      "Legs"
     ],
     "startingPosition": [
       "Stellen Sie sich aufrecht hin, Füße hüftbreit auseinander.",
@@ -289,8 +289,8 @@
   {
     "title": "Theraband Seitliche Schultermuskulatur",
     "category": [
-      "Schultern",
-      "Arme"
+      "Shoulder",
+      "Arms"
     ],
     "startingPosition": [
       "Stehen Sie aufrecht und halten Sie das Theraband schulterbreit vor sich.",
@@ -310,8 +310,8 @@
   {
     "title": "Theraband Innendreher",
     "category": [
-      "Schultern",
-      "Arme"
+      "Shoulder",
+      "Arms"
     ],
     "startingPosition": [
       "Befestigen Sie das Theraband auf Bauchnabelhöhe.",
@@ -333,8 +333,8 @@
   {
     "title": "Theraband Außendreher",
     "category": [
-      "Schultern",
-      "Arme"
+      "Shoulder",
+      "Arms"
     ],
     "startingPosition": [
       "Befestigen Sie das Theraband auf Bauchnabelhöhe.",
@@ -356,8 +356,8 @@
   {
     "title": "Theraband Dehnung Schulter",
     "category": [
-      "Schultern",
-      "Arme"
+      "Shoulder",
+      "Arms"
     ],
     "startingPosition": [
       "Stehen Sie aufrecht und halten Sie ein Ende des Therabands mit einer Hand fest.",
@@ -381,8 +381,8 @@
   {
     "title": "Kreuzheben mit Theraband",
     "category": [
-      "Rücken",
-      "Arme"
+      "Back",
+      "Arms"
     ],
     "startingPosition": [
       "Stellen Sie sich hüftbreit auf die Mitte des Therabands, sodass es unter den Füßen fixiert ist.",
@@ -406,8 +406,8 @@
   {
     "title": "Kreuzheben mit Kettlebell (Deadlift)",
     "category": [
-      "Rücken",
-      "Arme"
+      "Back",
+      "Arms"
     ],
     "startingPosition": [
       "Stellen Sie sich hüftbreit hin, die Kettlebell steht vor Ihnen auf dem Boden.",
@@ -432,8 +432,8 @@
   {
     "title": "Zweiarmiges Rudern mit Theraband",
     "category": [
-      "Arme",
-      "Rücken"
+      "Arms",
+      "Back"
     ],
     "startingPosition": [
       "Stellen Sie sich hüftbreit auf die Mitte des Therabands.",
@@ -461,8 +461,8 @@
   {
     "title": "Zweiarmiges Rudern mit Kurzhanteln",
     "category": [
-      "Arme",
-      "Rücken"
+      "Arms",
+      "Back"
     ],
     "startingPosition": [
       "Stellen Sie sich hüftbreit hin, die Knie sind leicht gebeugt.",

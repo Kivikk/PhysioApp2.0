@@ -113,7 +113,7 @@
     "title": "Rumpfdrehung in Seitlage mit Rolle",
     "category": [
       "Wirbelsäule",
-      "Schultern",
+      "Shoulder",
       "Rücken"
     ],
     "startingPosition": [
@@ -247,7 +247,7 @@
   {
     "title": "Stabrotation im Sitzen",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Rücken",
       "core"
     ],
@@ -289,7 +289,7 @@
   {
     "title": "Theraband Seitliche Schultermuskulatur",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -310,7 +310,7 @@
   {
     "title": "Theraband Innendreher",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -333,7 +333,7 @@
   {
     "title": "Theraband Außendreher",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
@@ -356,7 +356,7 @@
   {
     "title": "Theraband Dehnung Schulter",
     "category": [
-      "Schultern",
+      "Shoulder",
       "Arme"
     ],
     "startingPosition": [
