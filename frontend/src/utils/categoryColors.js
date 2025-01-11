@@ -1,11 +1,11 @@
 export const categoryColorMap = {
-  Legs: 'bg-physio-bluegray/60',
-  Hip: 'bg-physio-sage/60',
-  Shoulder: 'bg-physio-terrakotta/60',
-  Back: 'bg-physio-chanterelle/60',
-  Arms: 'bg-physio-sirocco/60',
-  Core: 'bg-physio-kupfer/60'
+  Legs: 'bg-physio-bluegray/80 ',
+  Hip: 'bg-physio-chanterelle/80',
+  Shoulder: 'bg-physio-kupfer/80',
+  Back: 'bg-physio-amber/80',
+  Arms: 'bg-physio-sage/80',
+  Core: 'bg-physio-tan'
 };
 
 //Fallback color
-export const defaultCategoryColor = 'bg-physio-amber/60';
+export const defaultCategoryColor = 'bg-physio-sirocco';

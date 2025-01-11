@@ -13,7 +13,7 @@ const ErrorPage = () => {
           Diese Seite wurde nicht gefunden
         </h2>
         <p className="text-physio-amber mb-8 max-w-md mx-auto">
-          Die von Ihnen gesuchte Seite existiert nicht oder wurde möglicherweise verschoben.
+          Die von Ihnen gesuchte Seite existiert noch nicht oder wurde möglicherweise verschoben.
         </p>
 
         <button

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Loader, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { workoutPlans } from '../components/sections/WorkoutPlans';
+import { workoutPlans } from '../data/workoutPlansData';
 import { getAllExercises } from '../services/api/index.js';
 import CloseHeader from '../components/navigation/CloseHeader';
 import { images } from '../utils/imageImports';
