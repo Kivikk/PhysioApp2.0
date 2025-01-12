@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, Heart, User, LogIn } from '../../utils/icons';
 import CloseHeader from './CloseHeader';
+import { useToast } from '../../contexts/ToastContext';
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { showToast } = useToast();
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isInstallable, setIsInstallable] = useState(true);
 
   const [favoriteCount, setFavoriteCount] = useState(() => {
     const stored = localStorage.getItem('physioapp_favorites');
@@ -22,10 +26,65 @@ const MobileNav = () => {
     return () => window.removeEventListener('favoritesUpdated', handleFavoritesUpdate);
   }, []);
 
+  //PWA popup
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setIsInstallable(true);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
   const handleNavigation = (path) => {
     navigate(path);
     setIsOpen(false);
   };
+
+  //PWA Installer
+  const handleInstallClick = async () => {
+    console.log('deferredPrompt status:', !!deferredPrompt);
+
+    if (!deferredPrompt) {
+      if (window.location.hostname === 'localhost') {
+        showToast('Installation nur in der Production-Version verfügbar', {
+          type: 'info',
+          duration: 3000
+        });
+      } else {
+        showToast('Bereits installiert', {
+          type: 'info',
+          duration: 3000
+        });
+      }
+      return;
+    }
+
+    try {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+
+      if (outcome === 'accepted') {
+        showToast('App wurde erfolgreich installiert', {
+          type: 'success',
+          duration: 3000
+        });
+      }
+      setDeferredPrompt(null);
+    } catch (error) {
+      console.error('Installations-Fehler:', error);
+      showToast('Installation fehlgeschlagen', {
+        type: 'error',
+        duration: 3000
+      });
+    }
+  };
+
 
   return (
     <>
@@ -77,12 +136,28 @@ const MobileNav = () => {
                 </li>
                 <li>
                   <button
+                    onClick={() => handleNavigation('/error')} //ändern nach implementierung des Profils in'/profile'
                     className="w-full flex items-center p-2 text-physio-chocolate hover:bg-physio-cream/10 rounded-lg"
                   >
                     <User className="w-5 h-5 mr-3" />
                     <span>Profil</span>
                   </button>
                 </li>
+                {isInstallable && (
+                  <li>
+                    <button
+                      onClick={handleInstallClick}
+                      className="w-full flex items-center p-2 text-physio-chocolate hover:bg-physio-cream/10 rounded-lg"
+                    >
+                      <img
+                        src="/favicon.svg"
+                        alt="PhysioApp Icon"
+                        className="w-5 h-5 mr-3"
+                      />
+                      <span>App installieren</span>
+                    </button>
+                  </li>
+                )}
               </ul>
             </nav>
           </div>

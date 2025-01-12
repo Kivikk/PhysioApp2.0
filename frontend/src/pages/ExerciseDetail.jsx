@@ -1,4 +1,3 @@
-// src/pages/ExerciseDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { images } from '../utils/imageImports';
@@ -79,7 +78,7 @@ const ExerciseDetail = () => {
                 ))}
               </div>
 
-              <div className="w-full h-96"> {/* Größeres Bild */}
+              <div className="w-full h-96">
                 <img
                   src={images[exercise.image] || images['PlaceholderPhysioApp.svg']}
                   alt={exercise.title}
@@ -92,8 +91,8 @@ const ExerciseDetail = () => {
             </div>
 
             {/* Details Section */}
-            <div className="p-6"> {/* Mehr Padding */}
-              <div className="space-y-6"> {/* Mehr Abstand zwischen den Sektionen */}
+            <div className="p-6">
+              <div className="space-y-6">
                 {exercise.startingPosition?.length > 0 && (
                   <div>
                     <h4 className="font-medium text-physio-mocha text-left uppercase">
@@ -152,18 +151,6 @@ const ExerciseDetail = () => {
                     </div>
                   )}
                 </div>
-              </div>
-
-              {/* Action Button */}
-              <div className="mt-8">
-                <button
-                  onClick={() => {
-                    // Hier später die Logik für das Hinzufügen zum Übungsplan
-                  }}
-                  className="w-full px-4 py-3 bg-physio-sage text-white rounded-md hover:bg-physio-sage/90 transition-colors duration-200"
-                >
-                  Zum Übungsplan hinzufügen
-                </button>
               </div>
             </div>
           </div>

@@ -4,7 +4,8 @@ import {
   User,
   LogIn,
   LogOut,
-  Menu
+  Menu,
+  ZoomIn
 } from "lucide-react";
 
 // Exercise Cards & Categories Icons
@@ -43,6 +44,7 @@ export {
   LogIn,
   LogOut,
   Menu,
+  ZoomIn,
 
   // Exercise Cards & Categories
   Filter,
