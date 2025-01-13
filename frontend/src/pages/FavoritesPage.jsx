@@ -1,3 +1,4 @@
+// src/pages/FavoritesPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import WorkoutCard from '../components/cards/WorkoutCard';
@@ -19,7 +20,6 @@ const FavoritesPage = () => {
     loadFavorites();
   }, [getFavoriteExercises]);
 
-
   useEffect(() => {
     const handleFavoritesUpdate = (event) => {
       const { action, id } = event.detail;
@@ -31,11 +31,9 @@ const FavoritesPage = () => {
     return () => window.removeEventListener('favoritesUpdated', handleFavoritesUpdate);
   }, []);
 
-
   const handleFavoriteChange = (newFavoriteState, exerciseId) => {
     if (!newFavoriteState) {
       removeFromFavorites(exerciseId);
-      // Sofortige lokale UI-Aktualisierung
       setFavorites(currentFavorites =>
         currentFavorites.filter(exercise => exercise._id !== exerciseId)
       );
@@ -53,10 +51,8 @@ const FavoritesPage = () => {
           <h1 className="text-2xl font-semibold text-physio-chocolate">
             Meine Favoriten
           </h1>
-
-
-          <div >
-            <CloseHeader onClose={() => navigate('/')} />
+          <div>
+            <CloseHeader />
           </div>
         </div>
       </div>
