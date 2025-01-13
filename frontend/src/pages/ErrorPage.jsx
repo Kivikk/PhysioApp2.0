@@ -17,7 +17,7 @@ const ErrorPage = () => {
         </p>
 
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate(-1)}
           className="inline-flex items-center px-6 py-3 bg-physio-sage text-white rounded-lg
                    hover:bg-physio-sage/90 transition-colors duration-200"
         >

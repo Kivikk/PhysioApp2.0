@@ -106,6 +106,7 @@ const CategoryExercises = () => {
         isOpen={selectedExercise !== null}
         onClose={handleCloseModal}
         {...selectedExercise}
+        sourceComponent="categoryExercises"
       />
     </div>
   );

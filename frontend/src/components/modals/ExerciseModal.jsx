@@ -1,3 +1,4 @@
+// src/components/modals/ExerciseModal.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Heart, ZoomIn } from 'lucide-react';
@@ -14,32 +15,28 @@ const ExerciseModal = ({
   title = "Placeholder Title",
   category = [],
 }) => {
-  // Alle States zusammen am Anfang
+  // States
   const [isHeartHovered, setIsHeartHovered] = useState(false);
+
+  // Hooks
   const { addToFavorites } = useFavorites();
   const navigate = useNavigate();
 
-  // Early return vor allen Handlers
+  // Early return
   if (!isOpen) return null;
 
   // Event Handler
   const handleDetailClick = (e) => {
-    // Zuerst Event-Bubbling verhindern
     e.preventDefault();
     e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
 
-    // Dann die Navigation ausführen
     if (_id) {
-      // Navigation ausführen
-      navigate(`/exercise/${_id}`);
-      // Modal schließen
       onClose();
+      navigate(`/exercise/${_id}`);
     }
   };
 
   const handleFavoriteClick = async (e) => {
-    console.log('Modal exerciseId:', _id);
     e.stopPropagation();
     try {
       const success = await addToFavorites(_id, {

@@ -84,6 +84,7 @@ const AllExercises = () => {
         isOpen={selectedExercise !== null}
         onClose={handleCloseModal}
         {...selectedExercise}
+        sourceComponent="allExercises"
       />
     </div>
   );

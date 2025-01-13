@@ -51,6 +51,9 @@ const WorkoutPlanPage = () => {
     fetchExercises();
   }, [selectedPlan]);
 
+  // const handleExerciseClick = (exercise) => {
+  //   navigate(`/exercise/${exercise._id}?source=workoutplan`);
+  // };
   const handleExerciseClick = (exercise) => {
     navigate(`/workout-plan/${planId}/exercise/${exercise._id}`);
   };

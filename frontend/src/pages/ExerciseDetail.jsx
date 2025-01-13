@@ -1,3 +1,4 @@
+// src/pages/ExerciseDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { images } from '../utils/imageImports';
@@ -49,19 +50,17 @@ const ExerciseDetail = () => {
 
   return (
     <div className="min-h-screen bg-physio-cream/30">
-      {/* Header */}
       <div className="w-full bg-physio-cream/40 shadow-md px-4 py-4 mb-6">
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-2xl font-semibold text-physio-chocolate">
             {exercise.title}
           </h1>
           <div className="bg-physio-cream/90 hover:bg-physio-cream rounded-full">
-            <CloseHeader onClose={() => navigate(-1)} />
+            <CloseHeader />
           </div>
         </div>
       </div>
 
-      {/* Content */}
       <div className="container mx-auto px-4 pb-8">
         <div className="max-w-3xl mx-auto">
           <div className="bg-physio-cream rounded-lg shadow-md overflow-hidden">
