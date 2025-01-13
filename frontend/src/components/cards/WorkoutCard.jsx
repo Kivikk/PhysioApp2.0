@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, ZoomIn, Plus } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import { useFavorites } from '../../hooks/useFavorites';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
@@ -63,20 +63,47 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
             e.target.src = images['PlaceholderPhysioApp.svg'];
           }}
         />
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            handleFavoriteClick(e);
-          }}
-          onMouseEnter={() => setIsHeartHovered(true)}
-          onMouseLeave={() => setIsHeartHovered(false)}
-          className="absolute top-2 right-2 p-2 bg-physio-cream/90 hover:bg-physio-cream rounded-full transition-all duration-200 hover:scale-110"
-        >
-          <Heart
-            className={`w-6 h-6 text-physio-terrakotta ${isHeartHovered ? '' : 'fill-current'
-              }`}
-          />
-        </button>
+        <div className="absolute top-2 right-4 flex gap-2">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate('/error');
+            }}
+            className="p-2 bg-physio-cream/90 hover:bg-physio-cream rounded-full transition-all duration-200 hover:scale-110 relative group"
+          >
+            <Plus className="w-6 h-6 text-physio-terrakotta" />
+            <span className="absolute top-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-physio-cream">
+              Zum Plan
+            </span>
+          </button>
+
+          {showDetails ? (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleFavoriteClick(e);
+              }}
+              onMouseEnter={() => setIsHeartHovered(true)}
+              onMouseLeave={() => setIsHeartHovered(false)}
+              className="p-2 bg-physio-cream/90 hover:bg-physio-cream rounded-full transition-all duration-200 hover:scale-110 relative group"
+            >
+              <Heart className={`w-6 h-6 text-physio-terrakotta ${isFavorite ? 'fill-current' : ''}`} />
+              <span className="absolute top-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-physio-cream">
+                Entfernen
+              </span>
+            </button>
+          ) : (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleFavoriteClick(e);
+              }}
+              className="p-2 bg-physio-cream/90 hover:bg-physio-cream rounded-full transition-all duration-200 hover:scale-110"
+            >
+              <Heart className="w-6 h-6 text-physio-terrakotta" />
+            </button>
+          )}
+        </div>
 
         <div className="absolute bottom-2 left-2 flex flex-wrap gap-2">
           {Array.isArray(category) && category.map((cat, index) => (
@@ -157,27 +184,18 @@ const WorkoutCard = ({ exercise, showDetails = false }) => {
         )}
 
 
-        <div className="mt-4 space-y-2">
-          {showDetails && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                // Hier später die Logik für das Hinzufügen zum Übungsplan
-              }}
-              className="inline-block w-full px-4 py-2 bg-physio-sage text-white rounded-md hover:bg-physio-sage/90 transition-colors duration-200"
-            >
-              Zum Übungsplan hinzufügen
-            </button>
-          )}
+
+        <div className="flex justify-center mt-6">
           <button
             onClick={handleCardClick}
-            className="inline-block w-full px-4 py-2 bg-physio-sirocco text-physio-chocolate hover:bg-physio-tan hover:text-physio-chocolate rounded-md transition-colors duration-200"
+            className=" text-physio-mocha hover:text-physio-safari rounded-full transition-colors duration-200"
           >
-            Details anzeigen
+            <ZoomIn className="w-12 h-12" />
           </button>
         </div>
       </div>
     </div>
+
   );
 };
 

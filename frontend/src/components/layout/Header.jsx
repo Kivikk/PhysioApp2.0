@@ -1,4 +1,3 @@
-// src/components/layout/Header.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, Heart, LogIn } from "../../utils/icons";
@@ -130,7 +129,7 @@ const Header = () => {
             </button>
 
             <button
-              onClick={() => navigate('/profile')}
+              onClick={() => navigate('/error')} //ändern nach implementierung des Profils in'/profile'
               className="text-physio-chocolate hover:text-physio-cream transition-colors duration-200 relative group"
               aria-label="Profil"
             >

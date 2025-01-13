@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, ZoomIn } from 'lucide-react';
 import { images } from '../../utils/imageImports';
 import CloseHeader from '../navigation/CloseHeader';
 import { categoryColorMap, defaultCategoryColor } from '../../utils/categoryColors';
 import { useFavorites } from '../../hooks/useFavorites';
-
 
 const ExerciseModal = ({
   isOpen,
@@ -15,11 +14,29 @@ const ExerciseModal = ({
   title = "Placeholder Title",
   category = [],
 }) => {
+  // Alle States zusammen am Anfang
   const [isHeartHovered, setIsHeartHovered] = useState(false);
   const { addToFavorites } = useFavorites();
   const navigate = useNavigate();
 
+  // Early return vor allen Handlers
   if (!isOpen) return null;
+
+  // Event Handler
+  const handleDetailClick = (e) => {
+    // Zuerst Event-Bubbling verhindern
+    e.preventDefault();
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+
+    // Dann die Navigation ausführen
+    if (_id) {
+      // Navigation ausführen
+      navigate(`/exercise/${_id}`);
+      // Modal schließen
+      onClose();
+    }
+  };
 
   const handleFavoriteClick = async (e) => {
     console.log('Modal exerciseId:', _id);
@@ -49,15 +66,29 @@ const ExerciseModal = ({
       <div className="bg-physio-cream rounded-lg shadow-xl max-w-2xl w-full" onClick={(e) => e.stopPropagation()}>
         <div className={`relative ${backgroundColorClass}`}>
           <div className="absolute top-4 right-4 z-10 flex items-center gap-4">
+
+            <button
+              onClick={handleDetailClick}
+              className="bg-physio-cream/90 hover:bg-physio-cream rounded-full p-2 transition-all duration-200 hover:scale-110 relative group"
+            >
+              <ZoomIn className="w-6 h-6 text-physio-terrakotta" />
+              <span className="absolute top-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-physio-cream">
+                Details
+              </span>
+            </button>
+
             <button
               onMouseEnter={() => setIsHeartHovered(true)}
               onMouseLeave={() => setIsHeartHovered(false)}
               onClick={handleFavoriteClick}
-              className="bg-physio-cream/90 hover:bg-physio-cream rounded-full p-2 transition-all duration-200 hover:scale-110"
+              className="bg-physio-cream/90 hover:bg-physio-cream rounded-full p-2 transition-all duration-200 hover:scale-110 relative group"
             >
               <Heart
                 className={`w-6 h-6 text-physio-terrakotta ${isHeartHovered ? 'fill-current' : ''}`}
               />
+              <span className="absolute top-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-physio-cream">
+                Favoriten
+              </span>
             </button>
 
             <div className="bg-physio-cream/90 hover:bg-physio-cream rounded-full">
@@ -85,9 +116,11 @@ const ExerciseModal = ({
         </div>
 
         <div className="p-6">
-          <h2 className="text-2xl font-semibold text-physio-chocolate mb-6">
-            {title}
-          </h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-semibold text-physio-chocolate">
+              {title}
+            </h2>
+          </div>
         </div>
       </div>
     </div>
