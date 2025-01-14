@@ -11,7 +11,7 @@ const App = () => {
     <Router>
       <AuthProvider>
         <ToastProvider>
-          <Toaster position="top-right" />
+          <Toaster />
           <AppRoutes />
         </ToastProvider>
       </AuthProvider>
