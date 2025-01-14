@@ -11,12 +11,12 @@ export const workoutPlans = [
       {
         title: "Dehnung in der Kindhaltung mit Übergang in den herabschauenden Hund",
         image: "DehnungKindhaltung.svg",
-        category: ["Rücken"]
+        category: ["Beine", "Rücken"]
       },
       {
         title: "Vorbeuge mit gestrecktem Rücken",
         image: "Vorbeuger.svg",
-        category: ["Rücken"]
+        category: ["Wirbelsäule", "Rücken"]
       },
       {
         title: "Seitliche Beinhebung in Seitenlage",
@@ -26,7 +26,7 @@ export const workoutPlans = [
       {
         title: "Rumpfdrehung in Seitlage mit Rolle",
         image: "RumpfDrehungBoden.svg",
-        category: ["Hüfte"]
+        category: ["Wirbelsäule", "Hüfte"]
       }
     ]
   },
@@ -62,7 +62,7 @@ export const workoutPlans = [
       {
         title: "Waden- und Hüftdehnung an der Wand",
         image: "WadenHueftDehnung.svg",
-        category: ["DehnungStandbeins"]
+        category: ["Hüfte", "Beine"]
       },
       {
         title: "Rumpfdrehung an der Wand",
@@ -79,7 +79,7 @@ export const workoutPlans = [
       {
         title: "Zweiarmiges Rudern mit Theraband",
         image: "PlaceholderPhysioApp.svg",
-        category: ["Rücken", "Arme"]
+        category: ["Arme", "Rücken"]
       },
       {
         title: "Theraband Innendreher",
@@ -104,7 +104,7 @@ export const workoutPlans = [
       {
         title: "Stabrotation im Sitzen",
         image: "Stabrotation.svg",
-        category: ["Rücken", "Schultern", "Wirbelsäule"]
+        category: ["Schultern", "Rücken", "Wirbelsäule"]
       },
       {
         title: "Diagonale Bauchmuskulatur",
@@ -124,17 +124,17 @@ export const workoutPlans = [
       {
         title: "Waden- und Hüftdehnung an der Wand",
         image: "WadenHueftDehnung.svg",
-        category: ["DehnungStandbeins"]
+        category: ["Hüfte", "Beine"]
       },
       {
         title: "Vorbeuge mit gestrecktem Rücken",
         image: "Vorbeuger.svg",
-        category: ["Rücken"]
+        category: ["Wirbelsäule", "Rücken"]
       },
       {
         title: "Dehnung in der Kindhaltung mit Übergang in den herabschauenden Hund",
         image: "DehnungKindhaltung.svg",
-        category: ["Rücken"]
+        category: ["Beine", "Rücken"]
       }
     ]
   }

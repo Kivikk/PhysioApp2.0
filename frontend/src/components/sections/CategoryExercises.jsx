@@ -80,8 +80,8 @@ const CategoryExercises = () => {
   }, {});
 
   return (
-    <div>
-      <h2 className="text-2xl font-semibold text-physio-chocolate mb-4 text-left">
+    <div className='py-8 px-4'>
+      <h2 className="text-2xl font-semibold text-physio-chocolate mb-6">
         Übungskarten nach Kategorien
       </h2>
       <div className="space-y-8">
