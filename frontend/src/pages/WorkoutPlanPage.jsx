@@ -33,11 +33,17 @@ const WorkoutPlanPage = () => {
         if (!result.success) {
           throw new Error(result.error || 'Failed to fetch exercises');
         }
+        // Image Suche hinzufügen, sobald alle Bilder vorhanden sind
+        // const planExercises = selectedPlan.exercises.map(planExercise => {
+        //   const fullExercise = result.data.find(e => e.title === planExercise.title || e.image === planExercise.image);
+        //   return fullExercise;
+        // }).filter(Boolean);
 
         const planExercises = selectedPlan.exercises.map(planExercise => {
-          const fullExercise = result.data.find(e => e.image === planExercise.image);
+          const fullExercise = result.data.find(e => e.title === planExercise.title);
           return fullExercise;
         }).filter(Boolean);
+
 
         setExercises(planExercises);
       } catch (err) {
@@ -90,11 +96,11 @@ const WorkoutPlanPage = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4  ">
-        <div className="space-y-4 ">
-          {exercises.map((exercise) => (
+      <div className="container mx-auto px-4">
+        <div className="space-y-4">
+          {exercises.map((exercise, index) => (  // index als zusätzlicher Identifier
             <div
-              key={exercise._id}
+              key={`${exercise._id}-${index}`}   // Kombiniere ID mit Index für unique key
               onClick={() => handleExerciseClick(exercise)}
               className="group bg-physio-cream rounded-lg shadow-md overflow-hidden relative w-full cursor-pointer transition-all duration-200 hover:brightness-95"
             >

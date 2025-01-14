@@ -52,20 +52,45 @@ const WorkoutPlanDetails = () => {
   const handleNavigation = (direction) => {
     if (!selectedPlan?.exercises || !exercise) return;
 
-    // Finde alle Übungen zum Plan
-    const planExercises = selectedPlan.exercises.map(planExercise =>
-      allExercises.find(e => e.image === planExercise.image)
-    ).filter(Boolean);
+    // Debug der aktuellen Übung
+    console.log('Current Exercise:', exercise.title);
 
-    const currentIndex = planExercises.findIndex(e => e._id === exercise._id);
-    const newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
+    // Mehr Details zum Debug
+    const matchingExercises = selectedPlan.exercises.map((e, idx) => ({
+      index: idx,
+      matches: e.title === exercise.title
+    }));
+    console.log('Matching exercises:', matchingExercises);
 
-    if (newIndex >= 0 && newIndex < planExercises.length) {
-      const nextExercise = planExercises[newIndex];
-      navigate(`/workout-plan/${planId}/exercise/${nextExercise._id}`);
+    // Exakter Vergleich mit dem Titel
+    const currentPlanIndex = selectedPlan.exercises.findIndex(planExercise =>
+      planExercise.title === exercise.title
+    );
+
+    // Debug des gefundenen Index
+    console.log(`Found index for ${exercise.title}:`, currentPlanIndex);
+
+    const newIndex = direction === 'next' ? currentPlanIndex + 1 : currentPlanIndex - 1;
+
+    // Debug der Navigation
+    console.log(`Navigation: ${currentPlanIndex} -> ${newIndex} (Total exercises: ${selectedPlan.exercises.length})`);
+
+    if (newIndex >= 0 && newIndex < selectedPlan.exercises.length) {
+      const nextPlanExercise = selectedPlan.exercises[newIndex];
+
+      // Debug der nächsten Übung
+      console.log('Next exercise from plan:', nextPlanExercise.title);
+
+      const nextExercise = allExercises.find(e =>
+        e.title === nextPlanExercise.title
+      );
+
+      if (nextExercise) {
+        console.log('Found matching exercise in DB:', nextExercise.title);
+        navigate(`/workout-plan/${planId}/exercise/${nextExercise._id}`);
+      }
     }
   };
-
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[200px] border border-dashed border-gray-300 rounded-lg">
